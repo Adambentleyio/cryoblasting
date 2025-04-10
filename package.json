@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
+    "@fontsource/press-start-2p": "^5.2.5",
+    "@fontsource/shrikhand": "^5.2.5",
     "astro": "^5.4.2",
     "less": "^4.2.1"
   }

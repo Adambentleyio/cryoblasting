@@ -18,10 +18,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
+  <!-- <Landing 
     title="Projects"
     image={optimizedImage}
-  />
+  /> -->
 
   <!-- ============================================ -->
   <!--                Contact Form                  -->
@@ -29,14 +29,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
   <section id="cs-contact">
     <div class="cs-container">
-      <form id="cs-form" name="Contact Form" method="post">
+      <form id="cs-form" name="Contact Form" method="post" netlify>
         <div class="cs-content">
           <span class="cs-topper">Contact</span>
           <h2 class="cs-title">Get in Touch</h2>
           <p class="cs-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
-            elementum ullamcorper ipsum porttitor aliquam. Id magna urna
-            ultrices odio pulvinar. Sed ut.
+            Feel free to call, text or fill out the form below. I respond to all messages by the end of the day. Looking forward to hearing from you!
           </p>
         </div>
         <label>
@@ -99,28 +97,29 @@ const optimizedImage = await getOptimizedImage(landingImage)
         >
         <!--Address-->
         <span class="cs-header">Address</span>
-        <a class="cs-link" href={client.address.mapLink}>
-          {client.address.lineOne},
-          <br />
+        <a class="cs-link">
+          {client.address.lineOne && `${client.address.lineOne}, <br />`}
+       
           {client.address.lineTwo},
           <br />
           <span class="cs-block">
-            {client.address.city}
+            {client.address.city},
             {client.address.state}
-            {client.address.zip}
+            
           </span>
         </a>
+        
 
         <!-- Background Image-->
         <picture class="cs-bg-picture">
           <source
             media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
+            srcset="/assets/images/dismantle.jpg"
           />
           <img
             aria-hidden="true"
             decoding="async"
-            src="/assets/images/skyscraper.jpg"
+            src="/assets/images/dismantle.jpg"
             alt="building"
             loading="lazy"
             width="2500"
@@ -155,6 +154,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
     #cs-contact {
       font-family: "Roboto", "Arial", sans-serif;
       padding: var(--sectionPadding);
+      margin-block: (40/16rem);
 
       .cs-container {
         width: 100%;

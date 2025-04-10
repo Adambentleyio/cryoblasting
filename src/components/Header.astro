@@ -1,6 +1,7 @@
 ---
 import navData from "../data/navData.json";
 import DarkModeToggle from "./DarkModeToggle.astro";
+import '@fontsource/press-start-2p';
 ---
 
 <!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
@@ -8,14 +9,15 @@ import DarkModeToggle from "./DarkModeToggle.astro";
   <div class="cs-container">
     <!--Nav Logo-->
     <a href="/" class="cs-logo" aria-label="back to home">
-      <img
+      <!-- <img
         src="/assets/svgs/logo-black.svg"
         alt="logo"
         width="210"
         height="29"
         aria-hidden="true"
         decoding="async"
-      />
+      /> -->
+      <span class="text-logo">WTS</span>
     </a>
     <!--Navigation List-->
     <nav class="cs-nav" role="navigation">
@@ -64,6 +66,22 @@ import DarkModeToggle from "./DarkModeToggle.astro";
   /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
+
+a:has(.text-logo) {
+  text-decoration: none;
+
+}
+
+.text-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-family: "Press Start 2P";
+  letter-spacing: -0.05em;
+  text-align: center;
+
+}
 
   /* Mobile - 1023px */
   @media only screen and (max-width: 63.9375rem) {

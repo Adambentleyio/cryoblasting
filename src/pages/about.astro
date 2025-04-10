@@ -5,7 +5,7 @@ import Landing from "../components/Landing.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "../js/utils"
-import landingImage from "../assets/images/cabinets2.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "../assets/images/hedges.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
@@ -18,10 +18,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
+  <!-- <Landing 
     title="About Us"
     image={optimizedImage}
-  />
+  /> -->
 
   <!-- ============================================ -->
   <!--                 Side By Side                 -->
@@ -34,35 +34,35 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <picture class="cs-picture cs-picture1">
           <source
             media="(max-width: 600px)"
-            srcset="/assets/images/cabinets2-m.jpg"
+            srcset="/assets/images/dismantle.jpg"
           />
           <source
             media="(min-width: 601px)"
-            srcset="/assets/images/cabinets2.jpg"
+            srcset="/assets/images/dismantle.jpg"
           />
           <img
             aria-hidden="true"
             decoding="async"
-            src="/assets/images/cabinets2.jpg"
+            src="/assets/images/dismantle.jpg"
             alt="cabinets"
             loading="lazy"
             width="400"
             height="563"
           />
         </picture>
-        <picture class="cs-picture cs-picture2">
+        <picture class="cs-picture cs-picture2 position-right-center">
           <source
             media="(max-width: 600px)"
-            srcset="/assets/images/construction-m.jpg"
+            srcset="/assets/images/adam-gym.png"
           />
           <source
             media="(min-width: 601px)"
-            srcset="/assets/images/construction.jpg"
+            srcset="/assets/images/adam-gym.png"
           />
           <img
             aria-hidden="true"
             decoding="async"
-            src="/assets/images/construction.jpg"
+            src="/assets/images/"
             alt="house"
             loading="lazy"
             width="400"
@@ -73,26 +73,20 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <!-- Right Content Section-->
       <div class="cs-right">
         <span class="cs-topper">About Us</span>
-        <h2 class="cs-title">About Company Title</h2>
+        <h2 class="cs-title">Weekend Tree Surgeon</h2>
         <p class="cs-text">
-          In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-          officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-          et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-          nonatourean olei aptent taciti sociosqu ad litora torquent per.
+          Hi, I'm Adam. I started Weekend Tree Surgeon to help friends and family create inspiring outdoor spaces. 
         </p>
         <p class="cs-text">
-          In consequat tincidunt turpis sit amet imperdiet. Praesent Class
-          officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur
-          et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent
-          nonatourean olei aptent taciti sociosqu ad litora torquent per.
+          In my Monday to Friday, I'm part of a two-man tree surgery company, <a href="clement-tree.co.uk">Clement Tree Company</a> where we take on multi-day projects and tackle more complex jobs. 
         </p>
+        <p class="cs-text">But if you're looking for assistance with small to medium sized trees, hedge cutting, or garden clearances then I'm the tree surgeon for you. I have all the right equipment to do your job safely and efficiently.</p>
         <div class="cs-flex-group">
           <p class="cs-flex-p">
-            In consequat tincidunt turpis sit amet imperdiet. Praesent Classei
-            consequat tincidunt turpis sit amet imperdiet for mind.
+            Because I work weekends, I can offer you a more flexible and better priced service than most tree surgeons. I can also offer you a more personal service, as I will be the one doing the work.
           </p>
-          <span class="cs-name">Justin Time</span>
-          <span class="cs-job">CEO-Founder</span>
+          <span class="cs-name">Adam Bentley</span>
+          <span class="cs-job">Weekend Tree Surgeon</span>
           <img
             class="cs-quote-icon"
             loading="lazy"
@@ -103,7 +97,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             height="77"
           />
         </div>
-        <a href="/projects" class="cs-button-solid">Our Projects</a>
+        <!-- <a href="/projects" class="cs-button-solid">Our Projects</a> -->
       </div>
     </div>
   </section>
@@ -121,6 +115,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   @media only screen and (min-width: 0em) {
     #sbs {
       padding: var(--sectionPadding);
+      margin-top: (40/16rem);
 
       .cs-container {
         width: 100%;
@@ -164,6 +159,9 @@ const optimizedImage = await getOptimizedImage(landingImage)
         height: (581/16em);
         top: 0;
         left: 0;
+        img {
+          object-position: left top;
+        }
       }
 
       .cs-picture2 {
@@ -173,8 +171,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
         box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
         /* 6px - 12px */
         border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
+        filter: grayscale(1);
         right: 0;
         bottom: 0;
+
+        img {
+          object-position: right top;
+        }
       }
 
       .cs-right {
@@ -302,7 +305,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         }
 
         .cs-flex-group {
-          background-color: var(--accent);
+          background-color: var(--bodyTextColor);
         }
 
         .cs-job {

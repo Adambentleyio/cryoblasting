@@ -15,15 +15,18 @@
     --headerColor: #1a1a1a;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
-
+    
     /* 13px - 16px */
-    --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
+    --topperFontSize: clamp(0.8125rem, 1.8vw, 1rem);
     /* 31px - 49px */
-    --headerFontSize: clamp(1.9375rem, 3.9vw, 3.0625rem);
-    --bodyFontSize: 1rem;
-
+    --headerFontSize: clamp(1.9375rem, 4.1vw, 3.0625rem);
+    --subtitleFontSize: clamp(1.525rem, 3vw, 1.7rem);
+    --bodyFontSize: 1.2rem;
+    
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
+    
+    --logoFont: 'Press Start 2P, shrikhand', sans-serif;
   }
 
   // Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
@@ -33,7 +36,7 @@
     line-height: 1.2em;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--secondary);
+    color: var(--primary);
     display: block;
   }
 
@@ -60,7 +63,7 @@
     font-weight: bold;
     line-height: (50/16em);
     text-align: center;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     text-decoration: none;
     width: auto;
     height: (50/16rem);
@@ -146,6 +149,7 @@
     padding: 0;
     color: var(--bodyTextColor);
     overflow-x: hidden;
+    scroll-behavior: smooth; 
   }
 
   *,
