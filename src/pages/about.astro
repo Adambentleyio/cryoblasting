@@ -2,6 +2,8 @@
 import BaseLayout from "..//layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 import Landing from "../components/Landing.astro";
+import stump from "../assets/images/stump.jpg";
+
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "../js/utils"
@@ -216,7 +218,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
 
       .cs-flex-p {
         /* 14px - 16px */
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        font-size: 1.25rem;
+        font-weight: 700;
         line-height: 1.5em;
         margin: 0 0 (16/16rem);
         color: #353535;

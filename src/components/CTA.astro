@@ -1,3 +1,8 @@
+---
+import log from "../assets/images/log.jpg";
+import { Picture } from "astro:assets";
+---
+
 <!-- ============================================ --><!--             Final Call to Action             --><!-- ============================================ -->
 <section id="cta">
   <div class="container">
@@ -12,7 +17,13 @@
     </p>
     <a href="/contact" class="cs-button-solid">Get an Estimate Now</a>
   </div>
-  <picture>
+  <!-- <Picture
+    formats={["avif", "webp"]} 
+    src={log}
+    alt="hedges"          
+    /> -->
+
+  <!-- <picture>
     <source
       media="(max-width: 600px)"
       srcset="/assets/images/cabinets2-m.jpg"
@@ -27,7 +38,7 @@
       width="2500"
       height="1667"
     />
-  </picture>
+  </picture> -->
 </section>
 
 <style lang="less">
@@ -43,12 +54,14 @@
       width: 100%;
       height: 100%;
       background: #000;
-      opacity: 0.7;
+      opacity: 0.9;
       display: block;
       position: absolute;
       top: 0;
       left: 0;
       z-index: -1;
+      background-image: 
+      radial-gradient(circle at 50% 50%, rgba(47, 42, 28, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
     }
 
     .container {
