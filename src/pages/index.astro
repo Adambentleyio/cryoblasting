@@ -1,6 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
+import hedges from "../assets/images/hedges.jpg";
+import clearanceAfter from "../assets/images/clearance-after.jpg";
+import clearanceBefore from "../assets/images/clearance-before.jpg";
+import climbing from "../assets/images/climbing.jpg";
+import dismantle from "../assets/images/dismantle.jpg";
+import ffintree from "../assets/images/ffintree.jpg";
+import garden from "../assets/images/garden.jpg";
+import headshot from "../assets/images/headshot.jpg";
+import log from "../assets/images/log.jpg";
+import { Picture } from "astro:assets";
+
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "../js/utils"
@@ -21,10 +32,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
       <div class="cs-flex-group">
         <span class="cs-topper">Cheshire's</span>
-        <h1 class="cs-title lg">Weekend Tree Surgeon</h1>
+        <h1 class="cs-title lg"><span>Weekend&nbsp</span><span>Tree Surgeon</span></h1>
         <h2 class="cs-subtitle">Small trees, hedge cutting & garden clearance. </h2>
         <p class="cs-text">
-          I am based in Stapeley, Nantwich and cover the surrounding areas including Crewe, Wistaston, Hankelow, and Audlem. 
+          Nantiwch-based, covering the surrounding areas including Crewe, Wistaston, Hankelow, and Audlem. 
         </p>
         <a href="#services" class="cs-button-solid">Explore More</a>
         <a href="/contact" class="cs-button-transparent">
@@ -129,7 +140,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
-        <picture class="cs-picture cs-picture1 position-right-top">
+          <Picture
+          formats={["avif", "webp"]}
+          class="cs-picture cs-picture1" 
+          src={hedges}
+          alt="hedges"          
+          />
+        
+        <!-- <picture class="cs-picture cs-picture1 position-right-top">
           <source
             media="(max-width: 600px)"
             srcset="/assets/images/hedges.jpg"
@@ -147,8 +165,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
             width="400"
             height="563"
           />
-        </picture>
-        <picture class="cs-picture cs-picture2">
+        </picture> -->
+        <Picture
+          formats={["avif", "webp"]} 
+          class="cs-picture cs-picture2"
+          src={dismantle}
+          alt="hedges"          
+          />
+        <!-- <picture class="cs-picture cs-picture2">
           <source
             media="(max-width: 600px)"
             srcset="/assets/images/dismantle.jpg"
@@ -166,7 +190,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             width="400"
             height="563"
           />
-        </picture>
+        </picture> -->
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
@@ -207,7 +231,20 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
-        <picture class="cs-picture cs-picture1">
+        <Picture
+          formats={["avif", "webp"]}
+          class="cs-picture cs-picture1" 
+          src={clearanceBefore}
+          alt="hedges"          
+          />
+          <Picture
+          formats={["avif", "webp"]}
+          class="cs-picture cs-picture2" 
+          src={clearanceAfter}
+          alt="hedges"          
+          />
+
+        <!-- <picture class="cs-picture cs-picture1">
           <source
             media="(max-width: 600px)"
             srcset="/assets/images/clearance-before.jpg"
@@ -244,7 +281,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             width="400"
             height="560"
           />
-        </picture>
+        </picture> -->
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
@@ -270,7 +307,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
       <span class="cs-topper">Our Gallery</span>
       <h2 class="cs-title">
-        Who said that good work can't also be a good time?
+        Who said good work can't be a good time?
       </h2>
       <div class="cs-image-group">
         <!-- Row 1-->
@@ -640,7 +677,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   /* Mobile - 360px */
   @media only screen and (min-width: 0em) {
     #hero {
-      font-family: "Roboto", "Arial", sans-serif;
+      font-family: "Shrikhand", "Arial", sans-serif;
       /* Centers button */
       text-align: center;
       /* changes on tablet */
@@ -725,7 +762,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       .cs-flex-group {
         width: 80vw;
         /* 464px - 562px */
-        max-width: clamp(29em, 60vw, 35.125em);
+        max-width: clamp(35em, 70vw, 50.125em);
         margin: auto;
         /* 60px - 220px */
         margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
@@ -745,14 +782,24 @@ const optimizedImage = await getOptimizedImage(landingImage)
       .cs-title {
         text-align: center;
         width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        // margin-bottom: (16/16rem);
         // color: var(--secondary);
 
       &.lg {
-        font-size: clamp(3rem, 5vw, 7rem);
+        font-size: clamp(3rem, 4.5vw, 6rem);
         line-height: clamp(3.5rem, 4vw, 4rem);
         margin-bottom: (16/16rem);
       }
+
+      span:last-of-type {
+        margin-bottom: (16/16rem);
       }
+      
+    }
 
       .cs-subtitle{
         font-size: var(--subtitleFontSize);
@@ -762,10 +809,11 @@ const optimizedImage = await getOptimizedImage(landingImage)
       .cs-text {
         text-align: center;
         /* 32px - 40px */
-        margin: 0 auto clamp(2rem, 4vw, 2.5rem) 0;
+        margin: 0 auto clamp(2rem, 4vw, 2.5rem) auto;
         /* 40px - 48px */
         margin-bottom: clamp(2.5rem, 4vw, 3rem);
         // color: var(--secondary);
+        max-width: 90%;
       }
 
       .cs-button-solid {
@@ -849,14 +897,15 @@ const optimizedImage = await getOptimizedImage(landingImage)
           background: -moz-linear-gradient(
             top,
             rgba(250, 251, 252, 0) 0%,
-            rgba(250, 251, 252, 0.5) 100%
+            rgba(250, 251, 252, 0.5) 20%
           ); /* FF3.6-15 */
           background: -webkit-linear-gradient(
             top,
             rgba(250, 251, 252, 0) 0%,
-            rgba(250, 251, 252, 0.5) 100%
-          ); /* Chrome10-25,Safari5.1-6 */
-          opacity: 1;
+            rgba(250, 251, 252, 0.5) 20%
+          ); 
+          /* Chrome10-25,Safari5.1-6 */
+          opacity: 0.3;
           display: block;
           position: absolute;
           top: 0;
@@ -869,18 +918,19 @@ const optimizedImage = await getOptimizedImage(landingImage)
         margin-bottom: 0;
       }
     }
+    
   }
 
   /* Desktop Parallax Effect - 1300px */
   @media only screen and (min-width: 81.25em) {
     #hero {
       // background-color:hsla(164,40%,54%,1);
-      background-color:var(--dark);
+      background-color: rgba(var(--dark), 0.5);
       background-image:
       // radial-gradient(at 80% 0%, hsla(215,100%,86%,1) 0px, transparent 90.0%);
       // radial-gradient(at 0% 100%, hsla(96,66%,92%,1) 0px, transparent 90.0%);
       // radial-gradient(at 80% 100%, hsla(80,100%,95%,1) 0px, transparent 90.0%),
-      radial-gradient(at 0% 0%, hsla(165,100%,93%,0.1) 0px, transparent 90.0%);
+      radial-gradient(at 0% 0%, hsla(164, 17%, 56%, 0.1) 0px, transparent 60.0%);
       // background: url("/assets/images/hedges.jpg");
       background-position: center;
       background-size: cover;
@@ -889,7 +939,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       background-attachment: fixed;
 
       .cs-flex-group .cs-title, .cs-text, .cs-subtitle, .cs-button-transparent {
-        color: white;
+        color: black;
       }
       .cs-button-transparent{
       border: 1px solid white;
@@ -907,6 +957,15 @@ const optimizedImage = await getOptimizedImage(landingImage)
             opacity: 0.8;
           }
         }
+        .cs-container .cs-title, .cs-subtitle, .cs-text {
+          color: white;
+        }
+      }
+      .cs-subtitle {
+        color: #d9e5f7;
+      }
+      .cs-text {
+        color: #d9e5f7;
       }
     }
   }
@@ -1073,22 +1132,25 @@ const optimizedImage = await getOptimizedImage(landingImage)
         position: absolute;
         /* clips img tag corners */
         overflow: hidden;
+        
         img {
           width: 100%;
           height: 100%;
           /* makes image act like a background image */
           object-fit: cover;
           position: absolute;
-          top: 0;
-          left: 0;
         }
       }
 
       .cs-picture1 {
         width: (522/16em);
         height: (581/16em);
-        top: 0;
-        left: 0;
+
+        &img {
+          position: absolute
+          top: 0;
+          left: 0;
+        }
       }
 
       .cs-picture2 {
@@ -1098,9 +1160,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
         box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 40px;
         /* 6px - 12px */
         border: clamp(0.375em, 1.5vw, 0.75em) solid #fff;
+        
+        &img {
+        position: absolute;
         right: 0;
         bottom: 0;
-
+        }
       }
 
 
@@ -1248,7 +1313,25 @@ const optimizedImage = await getOptimizedImage(landingImage)
 <---       Side By Side         -->
 <--- -------------------------- -*/
 
-  /* Mobile - 360px */
+  /* General */
+
+  img.cs-picture {
+    width: 100%;
+    height: 100%;
+    /* makes image act like a background image */
+    object-fit: cover;
+    position: absolute;
+    object-position: right top;
+  }
+
+  img.cs-picture2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+ /* Mobile - 360px */
+
   @media only screen and (min-width: 0em) {
     #sbs-r {
       padding: var(--sectionPadding);
