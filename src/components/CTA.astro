@@ -1,44 +1,15 @@
----
-import log from "../assets/images/log.jpg";
-import { Picture } from "astro:assets";
----
 
 <!-- ============================================ --><!--             Final Call to Action             --><!-- ============================================ -->
 <section id="cta">
   <div class="container">
     <h2 class="title">
-      Get It Done
-      <br />
-       With Us Today
+      Let's Get It Done
     </h2>
     <p>
-      Say something catchy, informative, and encouraging to click the button to
-      go to the contact page. I like to add these to the bottom of all pages.
+      I'm here to help you with your tree surgery needs. Please get in touch to talk about your project.
     </p>
-    <a href="/contact" class="cs-button-solid">Get an Estimate Now</a>
+    <a href="/contact" class="cs-button-solid">Get in touch now</a>
   </div>
-  <!-- <Picture
-    formats={["avif", "webp"]} 
-    src={log}
-    alt="hedges"          
-    /> -->
-
-  <!-- <picture>
-    <source
-      media="(max-width: 600px)"
-      srcset="/assets/images/cabinets2-m.jpg"
-    />
-    <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg" />
-    <img
-      aria-hidden="true"
-      decoding="async"
-      src="/assets/images/cabinets2.jpg"
-      alt="kitchen cabinets"
-      loading="lazy"
-      width="2500"
-      height="1667"
-    />
-  </picture> -->
 </section>
 
 <style lang="less">
@@ -98,6 +69,7 @@ import { Picture } from "astro:assets";
 
     p {
       text-align: center;
+      font-size: var(--bodyFontSize);
       width: 96%;
       max-width: (598/16rem);
       margin: auto;
@@ -118,27 +90,27 @@ import { Picture } from "astro:assets";
 /* Large Desktop */
 @media only screen and (min-width: 1300px) {
   #cta {
-    margin-top: (100/16rem);
+    // margin-top: (100/16rem);
     position: relative;
-    &:before {
-      display: none;
-    }
-    &:after {
-      content: "";
-      width: (2000/16rem);
-      height: (1108/16rem);
-      background: url("/assets/svgs/cta-squares.svg");
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 1;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      z-index: -3;
-      transform: translateX(-50%);
-    }
+    // &:before {
+    //   display: none;
+    // }
+    // &:after {
+    //   content: "";
+    //   width: (2000/16rem);
+    //   height: (1108/16rem);
+    //   background: url("/assets/svgs/cta-squares.svg");
+    //   background-position: center;
+    //   background-size: contain;
+    //   background-repeat: no-repeat;
+    //   opacity: 1;
+    //   display: block;
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 50%;
+    //   z-index: -3;
+    //   transform: translateX(-50%);
+    // }
     .container {
       width: 90.0625%;
       margin: auto;

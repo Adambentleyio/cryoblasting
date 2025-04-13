@@ -74,22 +74,24 @@ const optimizedImage = await getOptimizedImage(landingImage)
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
-        <span class="cs-topper">About Us</span>
+        <span class="cs-topper">About</span>
         <h2 class="cs-title">Weekend Tree Surgeon</h2>
         <p class="cs-text">
-          Hi, I'm Adam. I started Weekend Tree Surgeon to help friends and family create inspiring outdoor spaces. 
+          Hi, I'm Adam. I started Weekend Tree Surgeon to help friends and family create inspiring outdoor spaces... at the weekend. 
         </p>
         <p class="cs-text">
-          In my Monday to Friday, I'm part of a two-man tree surgery company, <a href="clement-tree.co.uk">Clement Tree Company</a> where we take on multi-day projects and tackle more complex jobs. 
+          I work as a Tree Surgeon with <a href="clement-tree.co.uk">Clement Tree Company</a> where we take on multi-day projects and tackle more complex jobs. 
         </p>
-        <p class="cs-text">But if you're looking for assistance with small to medium sized trees, hedge cutting, or garden clearances then I'm the tree surgeon for you. I have all the right equipment to do your job safely and efficiently.</p>
-        <div class="cs-flex-group">
-          <p class="cs-flex-p">
-            Because I work weekends, I can offer you a more flexible and better priced service than most tree surgeons. I can also offer you a more personal service, as I will be the one doing the work.
+        <p class="cs-text">But if you have small to medium sized trees, hedge cutting, or garden clearance at the weekend <b>then I'm the tree surgeon for you</b>. I have all the right equipment to do your job safely and efficiently.</p>
+          <p class="cs-text">
+            Because I work alone on weekends, I offer favourable prices for my services. I can do this because I don't have the fixed costs or overheads of a large company. 
           </p>
-          <span class="cs-name">Adam Bentley</span>
-          <span class="cs-job">Weekend Tree Surgeon</span>
-          <img
+          <p class="cs-text">
+            Thanks to the generosity of friends and family, the business continues to grow through word of mouth. </p>
+        <p class="cs-text">
+          I hope to keep it that way.
+        </p> 
+          <!-- <img
             class="cs-quote-icon"
             loading="lazy"
             decoding="async"
@@ -97,8 +99,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             alt="gavel"
             width="136"
             height="77"
-          />
-        </div>
+          /> -->
         <!-- <a href="/projects" class="cs-button-solid">Our Projects</a> -->
       </div>
     </div>
@@ -128,6 +129,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
         justify-content: center;
         align-items: center;
         row-gap: (40/16rem);
+      }
+
+      .cs-text a {
+        color: var(--primary);
+        font-size: var(--bodyFontSize);
+        text-decoration: underline;
       }
 
       .cs-left {
@@ -219,7 +226,6 @@ const optimizedImage = await getOptimizedImage(landingImage)
       .cs-flex-p {
         /* 14px - 16px */
         font-size: 1.25rem;
-        font-weight: 700;
         line-height: 1.5em;
         margin: 0 0 (16/16rem);
         color: #353535;
