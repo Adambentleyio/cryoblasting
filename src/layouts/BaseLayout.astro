@@ -18,7 +18,7 @@ const { description, title, preloadedImage } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="keywords" content="" />
-    <link rel="canonical" href={`https://${client.domain}${Astro.url.pathname}`} />
+    <link rel="canonical" href={`${client.domain}${Astro.url.pathname}`} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     
     <!-- Preloads the image passed as a prop -->
@@ -28,9 +28,9 @@ const { description, title, preloadedImage } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`https://${client.domain}${Astro.url.pathname}`} />
-    <meta property="og:image" content="/assets/images/logo-small.png" />
-    <meta property="og:image:secure_url" content="/assets/images/logo-small.png" />
+    <meta property="og:url" content={`${client.domain}${Astro.url.pathname}`} />
+    <meta property="og:image" content="/assets/images/wts-logo-small.png" />
+    <meta property="og:image:secure_url" content="/assets/images/wts-logo-small.png" />
 
     <!--Favicons-->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
