@@ -2,9 +2,6 @@
   {
     "key": "Home",
     "url": "/"
-  },
-  {
-    "key": "About Us",
-    "url": "/about/"
   }
+  
 ]

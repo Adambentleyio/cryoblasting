@@ -1,11 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import client from "../data/client.json";
-import Landing from "../components/Landing.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "../js/utils"
-import landingImage from "../assets/images/cabinets2.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "../assets/images/dry-ice-banner.webp" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
@@ -114,12 +113,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <picture class="cs-bg-picture">
           <source
             media="(min-width: 601px)"
-            srcset="/assets/images/dismantle.jpg"
+            srcset={landingImage.src}
           />
           <img
             aria-hidden="true"
             decoding="async"
-            src="/assets/images/dismantle.jpg"
+            src={landingImage.src}
             alt="building"
             loading="lazy"
             width="2500"

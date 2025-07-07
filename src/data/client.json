@@ -1,15 +1,15 @@
 {
-	"name": "Weekend Tree Surgeon",
-	"email": "bentleyadamj@gmail.com",
-	"phoneForTel": "+447484775932",
-	"phoneFormatted": "(+44) 748 477 5932",
+	"name": "Crybloasting Ltd.",
+	"email": "hello@cryoblasting.com",
+	"phoneForTel": "+44777777777",
+	"phoneFormatted": "(+44) 777 777 77777",
 	"address": {
 		
-		"lineTwo": "Stapeley",
+		"lineTwo": "Crybloasting",
 		"city": "Nantwich",
 		"state": "Cheshire",
 		"zip": "CW57SP",
 		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
 	},
-	"domain": "weekendtreesurgeon.netlify.app"
+	"domain": "cryblasting.netlify.app"
 }

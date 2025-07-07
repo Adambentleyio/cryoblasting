@@ -1,27 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
-import hedges from "../assets/images/hedges.jpg";
+import cryoTemp1 from "../assets/images/cryo-temp-1.jpg";
+import cryoTemp2 from "../assets/images/cryo-temp-2.jpg";
+import cryoTemp3 from "../assets/images/cryo-temp-3.jpg";
 import clearanceAfter from "../assets/images/clearance-after.jpg";
 import clearanceBefore from "../assets/images/clearance-before.jpg";
-import climbing from "../assets/images/climbing.jpg";
-import dismantle from "../assets/images/dismantle.jpg";
-import ffintree from "../assets/images/ffintree.jpg";
-import garden from "../assets/images/garden.jpg";
-import headshot from "../assets/images/headshot.jpg";
-import log from "../assets/images/log.jpg";
 import { Picture } from "astro:assets";
 
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "../js/utils"
-import landingImage from "../assets/images/landing.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "../assets/images/dry-ice-banner.webp" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
 <BaseLayout
-  title="The Weekend Tree Surgeon"
-  description="Tree Surgery in Nantwich & Crewe"
+  title="The Cryoblasting Specialists"
+  description="Dry Ice Blasting Services In The North West"
   preloadedImage = {optimizedImage}
 >
   <!-- ============================================ -->
@@ -31,15 +27,15 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <section id="hero">
     <div class="cs-container">
       <div class="cs-flex-group">
-        <span class="cs-topper">Cheshire's</span>
-        <h1 class="cs-title lg"><span>Weekend&nbsp</span><span>Tree Surgeon</span></h1>
-        <h2 class="cs-subtitle">Small trees, hedge cutting & garden clearance.</h2>
-        <p class="cs-text">
-          Covering Nantwich, Crewe, Hankelow and Audlem. 
-        </p>
-        <a href="#services" class="cs-button-solid">Explore More</a>
-        <a href="/contact" class="cs-button-transparent">
-          <!-- <img
+        <span class="cs-topper">North West</span>
+        <h1 class="cs-title lg">Cryoblasting Specialists</h1>
+        <h2 class="cs-subtitle">Non-abravise cleaning, removal and restoration</h2>
+        <!-- <p class="cs-text">
+          North West Cryoblasting Specialists
+        </p> -->
+        <a href="#services" class="cs-button-solid">How it works</a>
+        <!-- <a href="/contact" class="cs-button-transparent">
+          <img
             class="cs-img"
             loading="lazy"
             decoding="async"
@@ -47,23 +43,19 @@ const optimizedImage = await getOptimizedImage(landingImage)
             alt="play icon"
             width="17"
             height="17"
-          /> -->
+          />
           Get in Touch
-        </a>
+        </a> -->
       </div>
     </div>
-    <div class="lines">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
+    
     <!-- Background Image -->
-    <!-- <picture class="cs-picture">
+    <picture class="cs-picture">
       <source
         media="(max-width: 600px)"
-        srcset="/assets/images/landing-m.webp"
+        srcset={optimizedImage.src}
       />
-      <source media="(min-width: 601px)" srcset="/assets/images/landing.jpg" />
+      <source media="(min-width: 601px)" srcset={optimizedImage.src} />
       <img
         aria-hidden="true"
         decoding="async"
@@ -73,7 +65,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         height="1667"
         loading="eager"
       />
-    </picture> -->
+    </picture>
   </section>
 
   <!-- ============================================ -->
@@ -93,9 +85,9 @@ const optimizedImage = await getOptimizedImage(landingImage)
           height="48"
         />
       </picture>
-      <h2>Tree Removal</h2>
+      <h2>Surface Cleaning</h2>
       <p>
-        Remove, reduce or dismantle small trees and shrubs. Tight spaces are no problem. You can keep the logs if you wish - all waste removed.
+        Remove dirt, paint, and contaminants from a variety of surfaces using eco-friendly cryoblasting. Ideal for stone, brick, wood, and metal. All waste removed.
       </p>
     </div>
     <div class="card">
@@ -109,9 +101,9 @@ const optimizedImage = await getOptimizedImage(landingImage)
           height="48"
         />
       </picture>
-      <h2>Hedge Cutting</h2>
+      <h2>Graffiti Removal</h2>
       <p>
-        Topping or trimming any hedge to your needs, whether its taming a Leylandii or tightening up a box hedge. I can help you with any hedge cutting job. 
+        Efficiently remove graffiti from walls, fences, and public spaces without damaging the underlying surface. Fast, safe, and effective.
       </p>
     </div>
     <div class="card">
@@ -125,9 +117,9 @@ const optimizedImage = await getOptimizedImage(landingImage)
           height="48"
         />
       </picture>
-      <h2>Site Clearance</h2>
+      <h2>Restoration</h2>
       <p>
-        Do you have a garden makeover in mind? Combine tree and hedge cutting with general clearance of borders, ivy and weeds. Start yor project with a clean slate.
+        Restore the original look of buildings, monuments, and equipment. Cryoblasting is perfect for delicate restoration projects where traditional methods are too harsh.
       </p>
     </div>
   </section>
@@ -143,8 +135,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
           <Picture
           formats={["avif", "webp"]}
           class="cs-picture cs-picture1" 
-          src={hedges}
-          alt="hedges"          
+          src={cryoTemp1}
+          alt="cryoTemp1"          
           />
         
         <!-- <picture class="cs-picture cs-picture1 position-right-top">
@@ -169,8 +161,8 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <Picture
           formats={["avif", "webp"]} 
           class="cs-picture cs-picture2"
-          src={dismantle}
-          alt="hedges"          
+          src={cryoTemp2}
+          alt="cryoTemp2"          
           />
         <!-- <picture class="cs-picture cs-picture2">
           <source
@@ -195,32 +187,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <!-- Right Content Section-->
       <div class="cs-right">
         <span class="cs-topper">About</span>
-        <h2 class="cs-title">Weekend Tree Surgeon</h2>
+        <h2 class="cs-title">Your Trusted Partner in Dry Ice Blasting</h2>
         <p class="cs-text">
-          Hi, I'm Adam. I started Weekend Tree Surgeon to help friends & family with their outdoor spaces. 
+          At Cryoblasting, quality is our promise and our standard. We understand that your equipment and resources are valuable, and you deserve a cleaning solution that's as safe as it is effective. That's why we use advanced dry ice blasting technology to deliver spotless results without damaging your surfaces.
         </p>
-        <p class="cs-text">
-          In my workweek, I am a tree surgeon for a larger company, tackling larger and more complicated projects.
-        </p>
-        <p class="cs-text">If you're looking for a tree surgeon who can help you with smaller trees or hedges, then I can help. I have all the right equipment to do your job safely and efficiently. </p>
-        <div class="cs-flex-group">
-          <p class="cs-flex-p">
-            Hiring any tradesman can be daunting.
-          </p>
-          <p class="cs-text">I want to make it easy for you to get in touch, and know I will do a great job for you. As a father to two young boys my highest values are integrity and service.</p>
-          <span class="cs-name">Adam Bentley</span>
-          <span class="cs-job">Dad, Tree Surgeon, Self Improvement Junkie</span>
-          <img
-            class="cs-quote-icon"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/quote-white.svg"
-            alt="gavel"
-            width="136"
-            height="77"
-          />
+          <a href="/contact" class="cs-button-solid">Contact Us</a>
         </div>
-        <a href="/about" class="cs-button-solid">Learn More</a>
       </div>
     </div>
   </section>
@@ -236,13 +208,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <Picture
           formats={["avif", "webp"]}
           class="cs-picture cs-picture1" 
-          src={clearanceBefore}
+          src={cryoTemp1}
           alt="hedges"          
           />
           <Picture
           formats={["avif", "webp"]}
           class="cs-picture cs-picture2" 
-          src={clearanceAfter}
+          src={cryoTemp3}
           alt="hedges"          
           />
 
@@ -287,13 +259,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
       </div>
       <!-- Right Content Section-->
       <div class="cs-right">
-        <span class="cs-topper">Tree & Hedge Cutting</span>
-        <h2 class="cs-title">Tree Surgery In Nantwich & Crewe</h2>
+        <span class="cs-topper">Surface, Industrial & Commercial Cleaning</span>
+        <h2 class="cs-title">Cryoblasting Across The North West</h2>
         <p class="cs-text">
-          Small local jobs at favourable prices, for good people. It's that simple.
+          From specialist one-off cleans to regular contracts our professional technicians are on standby ready to guarantee a high specification clean.
         </p>
         <p class="cs-text">
-          I can help you with removing or reducing small trees, dismantling trees in tight spaces, hedge cutting, trimming and topping, pollarding, and garden clearance. I am based in Stapeley, Nantwich and cover the surrounding areas including Crewe, Wistaston, Hankelow, and Audlem. 
+          Our chemical-free clean is suitable for both the commercial and residential sectors. 
       </div>
     </div>
   </section>
@@ -302,200 +274,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                   Gallery                    -->
   <!-- ============================================ -->
 
-  <section id="gallery">
-    <div class="cs-container">
-      <span class="cs-topper">Gallery</span>
-      <h2 class="cs-title">
-        Who said good work isn't a good time?
-      </h2>
-      <div class="cs-image-group">
-        <!-- Row 1-->
-        <div class="cs-row cs-row-1">
-          <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-          <picture class="cs-picture cs-picture1">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/headshot.jpg"
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/headshot.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/headshot.jpg"
-              alt="new hallway"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-          <picture class="cs-picture cs-picture2">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/clearance-before.jpg"
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/clearance-before.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/clearance-before.jpg"
-              alt="new home construction"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-          <picture class="cs-picture cs-picture3">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/clearance-after.jpg"
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/clearance-after.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/clearance-after.jpg"
-              alt="building a new wall"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-        </div>
-        <!-- Row 2 -->
-        <div class="cs-row cs-row-2">
-          <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-          <picture class="cs-picture cs-picture1">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/climbing.jpg"
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/climbing.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/climbing.jpg"
-              alt="new kitchen"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-          <picture class="cs-picture cs-picture2">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/dismantle.jpg"
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/dismantle.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/dismantle.jpg"
-              alt="apartment addition"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-          <picture class="cs-picture cs-picture3">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/hedges.jpg "
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/hedges.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/hedges.jpg"
-              alt="kew kitchen cabinets"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-        </div>
-        <!-- Row 3 -->
-        <div class="cs-row cs-row-3">
-          <!-- To add more images, copy and paste this row's picture tags here in order from cs-picture-1 to cs-picture-3 and they will maintain the same layout-->
-          <picture class="cs-picture cs-picture1">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/ffintree.jpg"
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/ffintree.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/ffintree.jpg"
-              alt="new kitchen"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-          <picture class="cs-picture cs-picture2">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/log.jpg"
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/log.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/log.jpg"
-              alt="apartment addition"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-          <picture class="cs-picture cs-picture3">
-            <source
-              media="(max-width: 600px)"
-              srcset="/assets/images/garden.jpg"
-            />
-            <source
-              media="(min-width: 601px)"
-              srcset="/assets/images/garden.jpg"
-            />
-            <img
-              aria-hidden="true"
-              decoding="async"
-              src="/assets/images/garden.jpg"
-              alt="kew kitchen cabinets"
-              loading="lazy"
-              width="400"
-              height="560"
-            />
-          </picture>
-        </div>
-      </div>
-      <!-- <a href="/projects" class="cs-button-solid">View Full Gallery</a> -->
-    </div>
-  </section>
+  <!-- <Gallery /> -->
 
   <!-- ============================================ -->
   <!--                   Reviews                    -->
@@ -506,7 +285,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <span class="cs-topper">Our Reviews</span>
       <h2 class="cs-title">Words From Our Customers</h2>
       <p class="cs-text">
-        In a world where rocket science and trillion dollar companies are becoming the norm, my aim for Weekend Tree Surgeon is to care deeply about 1:1 service. I want to make sure you are happy with all work, and I'll do everything I can to make that happen. 
+        In a world where rocket science and trillion dollar companies are becoming the norm, at Cryoblasting we care about 1:1 service. We want to make sure you are happy with all work, and we'll do everything to make that happen. 
       </p>
       <ul class="cs-card-group">
         <!-- Review 1 -->
@@ -523,7 +302,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
             height="80"
           /> -->
           <p class="cs-item-p">
-            Adam is one of the good ones. He is a great guy, and he did a great job for us. He was friendly, helpful and very professional. I would recommend him to anyone looking for a tree surgeon. 
+            Testimonials are coming soon. We are working on getting some reviews from our customers.
           </p>
           <span class="cs-reviewer">
             Rebecca Thompson
@@ -553,10 +332,10 @@ const optimizedImage = await getOptimizedImage(landingImage)
             height="80"
           /> -->
           <p class="cs-item-p">
-            Adam was great. He came out to see us on a Saturday morning, and he was very friendly and helpful. We asked Adam to cut our hedge and remove a few small trees in the garden, and we would recommend him to anyone looking for a tree surgeon.
+            Testimonials are coming soon. We are working on getting some reviews from our customers.
           </p>
           <span class="cs-reviewer">
-            Alwena Bentley
+            John Snow
             <span class="cs-desc">Homeowner</span>
           </span>
           <img
@@ -608,6 +387,12 @@ const optimizedImage = await getOptimizedImage(landingImage)
   // position: relative;
   // font-family: sans-serif;
   // overflow: hidden;
+
+  .cs-container .cs-flex-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
 
   .lines {
     z-index: -50;
@@ -786,7 +571,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         justify-content: center;
         flex-wrap: wrap;
         // margin-bottom: (16/16rem);
-        // color: var(--secondary);
+        color: var(--bodyTextColorWhite);
 
       &.lg {
         font-size: clamp(3rem, 4.5vw, 6rem);
@@ -803,6 +588,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       .cs-subtitle{
         font-size: var(--subtitleFontSize);
         margin-bottom: (16/16rem);
+        color: var(--bodyTextColorWhite);
       }
 
       .cs-text {
