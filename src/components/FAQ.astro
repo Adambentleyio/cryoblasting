@@ -1,0 +1,299 @@
+<!-- ============================================ -->
+<!--                     FAQ                      -->
+<!-- ============================================ -->
+
+<section id="faq-1263">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Asked questions</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+        </div>
+        <ul class="cs-faq-group">
+            <!-- Active class added as default -->
+            <li class="cs-faq-item active">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        What is dry ice blasting?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, distinctio fuga, sunt quidem rem iure dolorum repellat tenetur, vero enim maxime. Architecto deserunt nobis aliquam obcaecati sapiente quisquam, facere velit nostrum asperiores maxime ipsam, eius corporis, nisi veniam eveniet sed et ipsum minima. Quisquam facere temporibus natus impedit sit nulla.
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Does dry ice blasting damage the surface?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How long does dry ice blasting take to complete?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Is dry ice blasting expensive?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Can you visit my premises or location?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                </p>
+            </li>
+        </ul>
+    </div>
+    <!--SVG Waves-->
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves-m.svg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves.svg">
+        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves.svg" loading="lazy" decoding="async" alt="moon" width="1920" height="647">
+    </picture>
+</section>
+                                
+<style lang="less">
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #faq-1263 {
+        padding: var(--sectionPadding);
+        background-color: var(--background-light);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    #faq-1263 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* 40px - 48px */
+        gap: clamp(2.5rem, 5vw, 3rem);
+    }
+    #faq-1263 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+
+    #faq-1263 .cs-title {
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+    #faq-1263 .cs-faq-group {
+        width: 100%;
+        max-width: 52.875rem;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* 16px - 20px */
+        gap: clamp(1rem, 2.4vw, 1.25rem);
+    }
+    #faq-1263 .cs-faq-item {
+        list-style: none;
+        width: 100%;
+        background-color: var(--bodyTextColor);
+        border-radius: 0.5rem;
+        padding: 0;
+        box-sizing: border-box;
+        transition: border-bottom 0.3s;
+    }
+    #faq-1263 .cs-faq-item.active .cs-button {
+        color: var(--bodyTextColorWhite);
+    }
+    #faq-1263 .cs-faq-item.active .cs-button:before {
+        background-color: var(--primary);
+        transform: rotate(315deg);
+    }
+    #faq-1263 .cs-faq-item.active .cs-button:after {
+        background-color: var(--primary);
+        transform: rotate(-315deg);
+    }
+    #faq-1263 .cs-faq-item.active .cs-item-p {
+        height: auto;
+        margin-top: 0.75rem;
+        /* 16px - 24px */
+        padding-top: 0.75rem;
+        padding-bottom: 1.5rem;
+        color: var(--bodyTextColorWhite);
+        opacity: 0.8;
+    }
+    #faq-1263 .cs-faq-item.active .cs-item-p:before {
+        /* border top */
+        content: "";
+        height: 1px;
+        background: #7d799c;
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 1.5rem;
+        right: 1.5rem;
+    }
+    #faq-1263 .cs-button {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        line-height: 1.2em;
+        text-align: left;
+        font-weight: bold;
+        width: 100%;
+        padding: 1.5rem 1.5rem 0;
+        border: none;
+        background: transparent;
+        color: var(--bodyTextColorWhite);
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        /* 16px - 24px */
+        gap: clamp(1rem, 2.5vw, 1.5rem);
+        position: relative;
+        transition:
+            background-color 0.3s,
+            color 0.3s;
+    }
+    #faq-1263 .cs-button:hover {
+        cursor: pointer;
+    }
+    #faq-1263 .cs-button:before {
+        /* left line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--bodyTextColorWhite);
+        opacity: 1;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        top: 67%;
+        right: 1.1875rem;
+        transform: rotate(45deg);
+        /* animate the transform from the left side of the x axis, and the center of the y */
+        transform-origin: left center;
+        transition: transform 0.5s;
+    }
+    #faq-1263 .cs-button:after {
+        /* right line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--bodyTextColorWhite);
+        opacity: 1;
+        border-radius: 50%;
+        position: absolute;
+        display: block;
+        top: 67%;
+        right: 1rem;
+        transform: rotate(-45deg);
+        /* animate the transform from the right side of the x axis, and the center of the y */
+        transform-origin: right center;
+        transition: transform 0.5s;
+    }
+    #faq-1263 .cs-button-text {
+        width: 90%;
+        padding: 0;
+        display: block;
+    }
+    #faq-1263 .cs-item-p {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        width: 100%;
+        height: 0;
+        margin: 0;
+        /* 16px - 24px */
+        padding: 0 1.5rem 1.5rem;
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+        opacity: 0;
+        color: var(--bodyTextColor);
+        /* clips the text so it doesn't show up */
+        overflow: hidden;
+        position: relative;
+        transition:
+            opacity 0.3s,
+            padding-bottom 0.3s,
+            padding-top 0.3s;
+    }
+    #faq-1263 .cs-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #faq-1263 .cs-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #faq-1263 {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    body.dark-mode #faq-1263 .cs-faq-item {
+        background-color: var(--medium);
+    }
+
+    #faq-1263 .cs-title {
+        color: var(--bodyTextColorWhite);
+    }
+}
+
+#faq-1263 .cs-background img {
+        opacity: 0.1;
+    }
+
+                            
+</style>
+
+<script>
+    const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+        for (const item of faqItems) {
+            const onClick = () => {
+            item.classList.toggle('active')
+        }
+        item.addEventListener('click', onClick)
+        }
+                                
+</script>
