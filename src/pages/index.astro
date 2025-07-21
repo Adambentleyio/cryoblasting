@@ -4,8 +4,6 @@ import CTA from "../components/CTA.astro";
 import cryoTemp1 from "../assets/images/cryo-temp-1.jpg";
 import cryoTemp2 from "../assets/images/cryo-temp-2.jpg";
 import cryoTemp3 from "../assets/images/cryo-temp-3.jpg";
-import clearanceAfter from "../assets/images/clearance-after.jpg";
-import clearanceBefore from "../assets/images/clearance-before.jpg";
 import { Picture } from "astro:assets";
 
 
@@ -15,6 +13,11 @@ import landingImage from "../assets/images/dry-ice-banner.webp" // <-- THE PATH 
 import FAQ from "../components/FAQ.astro";
 import Mechanisms from "../components/Mechanisms.astro";
 const optimizedImage = await getOptimizedImage(landingImage)
+import iceBlastingBMW from "../assets/images/ice-blasting-bmw.jpg"
+import iceBlastingBMWClose from "../assets/images/ice-blasting-bmw-close.jpg"
+import iceBlastingGraffiti from "../assets/images/ice-blasting-graffiti.jpg"
+import iceBlastingManufacturing from "../assets/images/ice-blasting-manufacturing.jpg"
+import iceBlastingTruck from "../assets/images/ice-blasting-truck.jpg"
 ---
 
 <BaseLayout
@@ -89,7 +92,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       </picture>
       <h2>Surface Cleaning</h2>
       <p>
-        Remove dirt, paint, and contaminants from a variety of surfaces using eco-friendly dry ice blasting. Ideal for stone, brick, wood, and metal. All waste removed.
+        Remove dirt, paint, and contaminants from a variety of surfaces using eco-friendly dry ice blasting. Ideal for stone, brick, wood, and metal.
       </p>
     </div>
     <div class="card">
@@ -137,7 +140,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
           <Picture
           formats={["avif", "webp"]}
           class="cs-picture cs-picture1" 
-          src={cryoTemp1}
+          src={iceBlastingBMW}
           alt="cryoTemp1"          
           />
         
@@ -163,7 +166,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <Picture
           formats={["avif", "webp"]} 
           class="cs-picture cs-picture2"
-          src={cryoTemp2}
+          src={iceBlastingBMWClose}
           alt="cryoTemp2"          
           />
         <!-- <picture class="cs-picture cs-picture2">
@@ -209,14 +212,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <div class="cs-left">
         <Picture
           formats={["avif", "webp"]}
-          class="cs-picture cs-picture1" 
-          src={cryoTemp1}
-          alt="hedges"          
+          class="cs-picture cs-picture1 pic-align-left" 
+          src={iceBlastingManufacturing}
+          alt="dry ice blasting manufacturing automation equipment"          
           />
           <Picture
           formats={["avif", "webp"]}
-          class="cs-picture cs-picture2" 
-          src={cryoTemp3}
+          class="cs-picture cs-picture2 pic-align-center" 
+          src={iceBlastingGraffiti}
           alt="hedges"          
           />
 
@@ -280,12 +283,24 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="cs-container">
       <!-- Left Image Section -->
       <div class="cs-left">
-          <Picture
+      <picture
           formats={["avif", "webp"]}
           class="cs-picture cs-picture1" 
-          src={cryoTemp1}
-          alt="cryoTemp1"          
-          />
+          alt="cryoTemp1">
+          <source
+        media="(max-width: 600px)"
+        srcset={optimizedImage.src}>
+        <source media="(min-width: 601px)" srcset={optimizedImage.src} />
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src={optimizedImage.src}
+          alt="new home"
+          width="2500"
+          height="1667"
+          loading="eager"
+        />
+      </picture>
         
         <!-- <picture class="cs-picture cs-picture1 position-right-top">
           <source
@@ -309,7 +324,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <Picture
           formats={["avif", "webp"]} 
           class="cs-picture cs-picture2"
-          src={cryoTemp2}
+          src={iceBlastingTruck}
           alt="cryoTemp2"          
           />
         <!-- <picture class="cs-picture cs-picture2">
@@ -843,6 +858,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         position: absolute;
         /* clips img tag corners */
         overflow: hidden;
+
         
         img {
           width: 100%;
@@ -850,6 +866,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
           /* makes image act like a background image */
           object-fit: cover;
           position: absolute;
+          
         }
       }
 
@@ -1040,6 +1057,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
     bottom: 0;
     right: 0;
   }
+
+  img.pic-align-center {
+            object-position: center;
+          }
+  img.pic-align-left {
+            object-position: left;
+          }
 
  /* Mobile - 360px */
 
