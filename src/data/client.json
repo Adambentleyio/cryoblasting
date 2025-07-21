@@ -4,8 +4,8 @@
 	"phoneForTel": "+44777777777",
 	"phoneFormatted": "(+44) 777 777 77777",
 	"address": {
-		
-		"lineTwo": "Crybloasting",
+		"lineOne": "Cryoblast UK Ltd.",
+		"lineTwo": "Cryoblast HQ",
 		"city": "Nantwich",
 		"state": "Cheshire",
 		"zip": "CW57SP",
