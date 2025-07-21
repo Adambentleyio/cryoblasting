@@ -38,6 +38,7 @@ import '@fontsource/press-start-2p';
       <!-- This also allows for easy substitution of CodeStitch navigations. Just replace the .cs-ul-wrapper in the new navigation with this one -->
       <div class="cs-ul-wrapper">
         <ul id="cs-expanded-ul" class="cs-ul">
+          <a class="cs-li-link" href="tel:(+44)7777777777">Call: (+44) 77 7777 7777</a>
           {
             navData.map((entry) => (
               <li class="cs-li">
@@ -56,7 +57,7 @@ import '@fontsource/press-start-2p';
         </ul>
       </div>
     </nav>
-    <a href="/contact" class="cs-button-solid cs-nav-button">Contact Us</a>
+    <a href="/contact" class="cs-li-link cs-nav-button">Contact Us</a>
     <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
     <DarkModeToggle />
   </div>
@@ -355,6 +356,9 @@ a:has(.text-logo) {
           &:before {
             display: block;
           }
+        }
+        a {
+          text-decoration: none;
         }
       }
 

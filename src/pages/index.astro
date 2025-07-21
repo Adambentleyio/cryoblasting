@@ -13,6 +13,7 @@ import { Picture } from "astro:assets";
 import {getOptimizedImage} from "../js/utils"
 import landingImage from "../assets/images/dry-ice-banner.webp" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import FAQ from "../components/FAQ.astro";
+import Mechanisms from "../components/Mechanisms.astro";
 const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
@@ -88,7 +89,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       </picture>
       <h2>Surface Cleaning</h2>
       <p>
-        Remove dirt, paint, and contaminants from a variety of surfaces using eco-friendly cryoblasting. Ideal for stone, brick, wood, and metal. All waste removed.
+        Remove dirt, paint, and contaminants from a variety of surfaces using eco-friendly dry ice blasting. Ideal for stone, brick, wood, and metal. All waste removed.
       </p>
     </div>
     <div class="card">
@@ -190,7 +191,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
         <span class="cs-topper">About</span>
         <h2 class="cs-title">Your Trusted Partner in Dry Ice Blasting</h2>
         <p class="cs-text">
-          At Cryoblasting, quality is our promise and our standard. We understand that your equipment and resources are valuable, and you deserve a cleaning solution that's as safe as it is effective. That's why we use advanced dry ice blasting technology to deliver spotless results without damaging your surfaces.
+          At Cryoblast UK, quality is our promise and our standard. We understand that your equipment and resources are valuable, and you deserve a cleaning solution that's as safe as it is effective. That's why we use advanced dry ice blasting technology to deliver spotless results without damaging your surfaces.
         </p>
           <a href="/contact" class="cs-button-solid">Contact Us</a>
         </div>
@@ -261,15 +262,91 @@ const optimizedImage = await getOptimizedImage(landingImage)
       <!-- Right Content Section-->
       <div class="cs-right">
         <span class="cs-topper">Surface, Industrial & Commercial Cleaning</span>
-        <h2 class="cs-title">Cryoblasting Across The North West</h2>
+        <h2 class="cs-title">Nationwide Dry Ice Blasting</h2>
         <p class="cs-text">
           From specialist one-off cleans to regular contracts our professional technicians are on standby ready to guarantee a high specification clean.
         </p>
         <p class="cs-text">
-          Our chemical-free clean is suitable for both the commercial and residential sectors. 
+          Our chemical-free clean is suitable for both commercial and industrial sectors. 
       </div>
     </div>
   </section>
+
+  <!-- ============================================ -->
+  <!--                 Side By Side                 -->
+  <!-- ============================================ -->
+
+  <section id="sbs">
+    <div class="cs-container">
+      <!-- Left Image Section -->
+      <div class="cs-left">
+          <Picture
+          formats={["avif", "webp"]}
+          class="cs-picture cs-picture1" 
+          src={cryoTemp1}
+          alt="cryoTemp1"          
+          />
+        
+        <!-- <picture class="cs-picture cs-picture1 position-right-top">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/hedges.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/hedges.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/hedges.jpg"
+            alt="cabinets"
+            loading="lazy"
+            width="400"
+            height="563"
+          />
+        </picture> -->
+        <Picture
+          formats={["avif", "webp"]} 
+          class="cs-picture cs-picture2"
+          src={cryoTemp2}
+          alt="cryoTemp2"          
+          />
+        <!-- <picture class="cs-picture cs-picture2">
+          <source
+            media="(max-width: 600px)"
+            srcset="/assets/images/dismantle.jpg"
+          />
+          <source
+            media="(min-width: 601px)"
+            srcset="/assets/images/dismantle.jpg"
+          />
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/images/dismantle.jpg"
+            alt="house"
+            loading="lazy"
+            width="400"
+            height="563"
+          />
+        </picture> -->
+      </div>
+      <!-- Right Content Section-->
+      <div class="cs-right">
+        <span class="cs-topper">Knowledge Base</span>
+        <h2 class="cs-title">What Is Dry Ice Blasting?</h2>
+        <p class="cs-text">
+          Dry ice blasting is an advanced cleaning method that uses frozen carbon dioxide pellets to remove contaminants from surfaces without removing any material from the underlying equipment, surface or component.
+        </p>
+        <p class="cs-text">Why It's Different
+          Unlike sandblasting or chemical cleaning, dry ice blasting leaves no residue behind. The pellets simply vanish into harmless CO2 gas, leaving you with a clean surface and nothing else to dispose of.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Mechanisms />
 
   <!-- ============================================ -->
   <!--                   Gallery                    -->
@@ -283,81 +360,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                   Reviews                    -->
   <!-- ============================================ -->
 
-  <section id="reviews">
-    <div class="cs-container">
-      <span class="cs-topper">Our Reviews</span>
-      <h2 class="cs-title">Words From Our Customers</h2>
-      <p class="cs-text">
-        In a world where rocket science and trillion dollar companies are becoming the norm, at Cryoblasting we care about 1:1 service. We want to make sure you are happy with all work, and we'll do everything to make that happen. 
-      </p>
-      <ul class="cs-card-group">
-        <!-- Review 1 -->
-        <li class="cs-item">
-          <!-- <img
-            class="cs-item-img"
-            style="border-radius: 50%"
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            src="https://i.pravatar.cc/150?img=23"
-            alt="profile picture"
-            width="80"
-            height="80"
-          /> -->
-          <p class="cs-item-p">
-            Testimonials are coming soon. We are working on getting some reviews from our customers.
-          </p>
-          <span class="cs-reviewer">
-            Rebecca Thompson
-            <span class="cs-desc">Teacher</span>
-          </span>
-          <img
-            class="cs-item-stars"
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
-            alt="stars"
-            width="96"
-            height="16"
-          />
-        </li>
-        <!-- Review 2 -->
-        <li class="cs-item">
-          <!-- <img
-            class="cs-item-img"
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/profile-4.png"
-            alt="profile picture"
-            width="80"
-            height="80"
-          /> -->
-          <p class="cs-item-p">
-            Testimonials are coming soon. We are working on getting some reviews from our customers.
-          </p>
-          <span class="cs-reviewer">
-            John Snow
-            <span class="cs-desc">Homeowner</span>
-          </span>
-          <img
-            class="cs-item-stars"
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg"
-            alt="stars"
-            width="96"
-            height="16"
-          />
-        </li>
-      </ul>
-      <!-- <a aria-label="read more reviews" href="/reviews" class="cs-button-solid"
-        >Our Reviews</a
-      > -->
-    </div>
-  </section>
+  <!-- <Reviews /> -->
 
   <!-- <CTA /> -->
 </BaseLayout>
@@ -727,7 +730,7 @@ const optimizedImage = await getOptimizedImage(landingImage)
       background-attachment: fixed;
 
       .cs-flex-group .cs-title, .cs-text, .cs-subtitle, .cs-button-transparent {
-        color: black;
+        color: var(--bodyTextColorWhite);
       }
       .cs-button-transparent{
       border: 1px solid white;
