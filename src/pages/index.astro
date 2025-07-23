@@ -9,15 +9,20 @@ import { Picture } from "astro:assets";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "../js/utils"
+import {getHeroImages } from "../js/utils";
+
 import landingImage from "../assets/images/dry-ice-banner.webp" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
-import FAQ from "../components/FAQ.astro";
-import Mechanisms from "../components/Mechanisms.astro";
-const optimizedImage = await getOptimizedImage(landingImage)
 import iceBlastingBMW from "../assets/images/ice-blasting-bmw.jpg"
 import iceBlastingBMWClose from "../assets/images/ice-blasting-bmw-close.jpg"
 import iceBlastingGraffiti from "../assets/images/ice-blasting-graffiti.jpg"
 import iceBlastingManufacturing from "../assets/images/ice-blasting-manufacturing.jpg"
+
+const optimizedImage = await getOptimizedImage(landingImage)
+const heroImageOptimised = await getHeroImages(landingImage)
+
 import iceBlastingTruck from "../assets/images/ice-blasting-truck.jpg"
+import FAQ from "../components/FAQ.astro";
+import Mechanisms from "../components/Mechanisms.astro";
 ---
 
 <BaseLayout
@@ -53,9 +58,35 @@ import iceBlastingTruck from "../assets/images/ice-blasting-truck.jpg"
         </a> -->
       </div>
     </div>
-    
-    <!-- Background Image -->
+
+    <!-- New Background Image -->
     <picture class="cs-picture">
+      <!-- WebP sources (modern browsers) -->
+      {heroImageOptimised.webp.map(({ src, media, type }) => (
+        <source srcset={src} media={media} type={type} />
+      ))}
+      
+      <!-- JPEG fallbacks (older browsers) -->
+      {heroImageOptimised.jpeg.map(({ src, media, type }) => (
+        <source srcset={src} media={media} type={type} />
+      ))}
+      
+      <!-- Final fallback img -->
+      <img
+        src={heroImageOptimised.fallback.src}
+        alt="New home"
+        width={heroImageOptimised.fallback.width}
+        height={heroImageOptimised.fallback.height}
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        class="hero-image"
+      />
+    </picture>
+
+
+    <!-- Background Image -->
+    <!-- <picture class="cs-picture">
       <source
         media="(max-width: 600px)"
         srcset={optimizedImage.src}
@@ -70,7 +101,7 @@ import iceBlastingTruck from "../assets/images/ice-blasting-truck.jpg"
         height="1667"
         loading="eager"
       />
-    </picture>
+    </picture> -->
   </section>
 
   <!-- ============================================ -->
