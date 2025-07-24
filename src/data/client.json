@@ -1,15 +1,15 @@
 {
-	"name": "Crybloasting Ltd.",
-	"email": "hello@cryoblasting.com",
-	"phoneForTel": "+44777777777",
-	"phoneFormatted": "(+44) 777 777 77777",
+	"name": "Cryblasting Ltd.",
+	"email": "",
+	"phoneForTel": "+447354339337",
+	"phoneFormatted": "(+44) 7354 339 337",
 	"address": {
 		"lineOne": "Cryoblast UK Ltd.",
 		"lineTwo": "Cryoblast HQ",
 		"city": "Nantwich",
 		"state": "Cheshire",
-		"zip": "CW57SP",
-		"mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
+		"zip": "TF9 3TG",
+		"mapLink": "https://maps.app.goo.gl/fTnKepoS4bVAWckL8"
 	},
-	"domain": "cryblasting.netlify.app"
+	"domain": "cryblast.uk"
 }
