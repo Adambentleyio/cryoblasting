@@ -1,0 +1,406 @@
+---
+const { heroImageOptimised } = Astro.props;
+---
+
+<!-- ============================================ -->
+  <!--                    Hero                      -->
+  <!-- ============================================ -->
+
+  <section id="hero">
+    <div class="cs-container">
+      <div class="cs-flex-group">
+        <span class="cs-topper">CryoBlast UK Ltd.</span>
+        <h1 class="cs-title lg">The Cryoblasting Specialists</h1>
+        <h2 class="cs-subtitle">Experts in non-abravise cleaning, removal and restoration.</h2>
+        <!-- <p class="cs-text">
+          North West Cryoblasting Specialists
+        </p> -->
+        <!-- <a href="#services" class="cs-button-solid">Call Us</a> -->
+        <!-- <a href="/contact" class="cs-button-transparent">
+          <img
+            class="cs-img"
+            loading="lazy"
+            decoding="async"
+            src="https://csimg.nyc3.digitaloceanspaces.com/Hero/play.svg"
+            alt="play icon"
+            width="17"
+            height="17"
+          />
+          Get in Touch
+        </a> -->
+      </div>
+    </div>
+
+    <!-- New Background Image -->
+    <picture class="cs-picture">
+      <!-- WebP sources (modern browsers) -->
+      {heroImageOptimised.webp.map(({ src, media, type }) => (
+        <source srcset={src} media={media} type={type} />
+      ))}
+      
+      <!-- JPEG fallbacks (older browsers) -->
+      {heroImageOptimised.jpeg.map(({ src, media, type }) => (
+        <source srcset={src} media={media} type={type} />
+      ))}
+      
+      <!-- Final fallback img -->
+      <img
+        src={heroImageOptimised.fallback.src}
+        alt="New home"
+        width={heroImageOptimised.fallback.width}
+        height={heroImageOptimised.fallback.height}
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        class="hero-image"
+      />
+    </picture>
+
+
+    <!-- Background Image -->
+    <!-- <picture class="cs-picture">
+      <source
+        media="(max-width: 600px)"
+        srcset={optimizedImage.src}
+      />
+      <source media="(min-width: 601px)" srcset={optimizedImage.src} />
+      <img
+        aria-hidden="true"
+        decoding="async"
+        src={optimizedImage.src}
+        alt="new home"
+        width="2500"
+        height="1667"
+        loading="eager"
+      />
+    </picture> -->
+  </section>
+
+  <style lang="less">
+
+     /*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+
+ #hero {
+
+// height: 100%;
+width: 100%;
+display: table;
+// background-color: #171717;
+// color: #000;
+// line-height: 1.6;
+// position: relative;
+// font-family: sans-serif;
+// overflow: hidden;
+
+.cs-container .cs-flex-group {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+}
+
+@keyframes drop {
+0% {
+  top: -50%;
+}
+100% {
+  top: 110%;
+}
+}
+
+
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0em) {
+  #hero {
+    font-family: "Shrikhand", "Arial", sans-serif;
+    /* Centers button */
+    text-align: center;
+    /* changes on tablet */
+    padding: 0 (16/16rem);
+    padding-bottom: (100/16rem);
+    position: relative;
+    z-index: 1;
+    /* prevents overflow from the lines extending past the screen width */
+    overflow: hidden;
+
+    .cs-picture {
+      /* Background Image */
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -2;
+
+
+      &:before {
+        /* Black Color Overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.85;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        /* prevents the cursor from interacting with it */
+        pointer-events: none;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        /* Makes image act like a background-image */
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+
+        animation: fadein 2s;
+
+        @keyframes fadein{
+        0% { opacity:0; }
+        50% { opacity:0; }
+        60% { opacity:0.1; }
+        100% { opacity:1; }
+}
+      }
+    }
+
+    .cs-container {
+      width: 100%;
+      max-width: (1280/16em);
+      margin: auto;
+      /* we put the padding top and bottom on the container instead of #Hero so the pseudo element lines go to the top and bottom of the section */
+      /* 144px - 280px - leaving extra space for the navigation */
+      /* changes on tablet */
+      padding: clamp(9em, 25.95vw, 17.5em) 0;
+      position: relative;
+
+    }
+
+    .cs-flex-group {
+      width: 80vw;
+      /* 464px - 562px */
+      max-width: clamp(35em, 70vw, 50.125em);
+      margin: auto;
+      /* 60px - 220px */
+      margin-bottom: clamp(3.75em, 15.5vw, 13.75em);
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .cs-topper {
+      text-align: center;
+      margin-bottom: (16/16rem);
+      // color: var(--primary);
+    }
+
+    .cs-title {
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      // margin-bottom: (16/16rem);
+      color: var(--bodyTextColorWhite);
+
+    &.lg {
+      font-size: clamp(3rem, 4.5vw, 6rem);
+      line-height: clamp(3.5rem, 4vw, 4rem);
+      margin-bottom: (16/16rem);
+    }
+
+    span:last-of-type {
+      margin-bottom: (16/16rem);
+    }
+    
+  }
+
+    .cs-subtitle{
+      font-size: var(--subtitleFontSize);
+      margin-bottom: (16/16rem);
+      color: var(--bodyTextColorWhite);
+      max-width: 30ch;
+    }
+
+    .cs-text {
+      text-align: center;
+      /* 32px - 40px */
+      margin: 0 auto clamp(2rem, 4vw, 2.5rem) auto;
+      /* 40px - 48px */
+      margin-bottom: clamp(2.5rem, 4vw, 3rem);
+      // color: var(--secondary);
+      max-width: 90%;
+    }
+
+    .cs-button-solid {
+      line-height: clamp(2.875em, 5.5vw, 3.5em);
+      height: initial;
+      margin-bottom: calc(16 / 16 * 1rem);
+    }
+
+    .cs-button-transparent {
+      font-size: (16/16rem);
+      font-weight: 700;
+      /* 46px - 56px */
+      line-height: clamp(2.875em, 5.5vw, 3.5em);
+      text-decoration: none;
+      width: (180/16rem);
+      /* 46px - 56px */
+      height: clamp(2.875em, 5.5vw, 3.5em);
+      margin: 0 (8/16rem);
+      box-sizing: border-box;
+      padding: 0;
+      color: var(--secondary);
+      background-color: transparent;
+      border: 1px solid var(--secondary);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+
+      body.dark-mode & {
+      color: white;
+      border: 1px solid white;
+    }
+
+      &:before {
+        content: "";
+        background: #000;
+        opacity: 1;
+        display: block;
+        position: absolute;
+        /* so it sits on top of the border */
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        z-index: -1;
+        /* this is what creates the grow affect on hover */
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+
+      &:hover {
+        color: white;
+        &:before {
+          transform: scaleX(1);
+        }
+      }
+
+      .cs-img {
+        margin-right: (12/16rem);
+        display: block;
+      }
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48em) {
+  #hero {
+    /* 32px - 40px */
+    padding: 0 clamp(2em, 5vw, 2.5em);
+
+    .cs-container {
+      padding: clamp(7em, 27.95vw, 17.5em) 0 clamp(9em, 30.95vw, 23.5em) 0;
+      &:after {
+        /* Right Line */
+        content: "";
+        width: 1px;
+        height: 100%;
+        background: -moz-linear-gradient(
+          top,
+          rgba(250, 251, 252, 0) 0%,
+          rgba(250, 251, 252, 0.5) 20%
+        ); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          top,
+          rgba(250, 251, 252, 0) 0%,
+          rgba(250, 251, 252, 0.5) 20%
+        ); 
+        /* Chrome10-25,Safari5.1-6 */
+        opacity: 0.3;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+
+    .cs-button-solid {
+      margin-right: (20/16rem);
+      margin-bottom: 0;
+    }
+  }
+  
+}
+
+/* Desktop Parallax Effect - 1300px */
+@media only screen and (min-width: 81.25em) {
+  #hero {
+    // background-color:hsla(164,40%,54%,1);
+    background-color: rgba(var(--dark), 0.5);
+    background-image:
+    // radial-gradient(at 80% 0%, hsla(215,100%,86%,1) 0px, transparent 90.0%);
+    // radial-gradient(at 0% 100%, hsla(96,66%,92%,1) 0px, transparent 90.0%);
+    // radial-gradient(at 80% 100%, hsla(80,100%,95%,1) 0px, transparent 90.0%),
+    radial-gradient(at 0% 0%, hsla(164, 17%, 56%, 0.1) 0px, transparent 60.0%);
+    // background: url("/assets/images/hedges.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* creates parallax effect on background image */
+    background-attachment: fixed;
+
+    .cs-flex-group .cs-title, .cs-text, .cs-subtitle, .cs-button-transparent {
+      color: var(--bodyTextColorWhite);
+    }
+    .cs-button-transparent{
+    border: 1px solid white;
+    }
+  }
+  
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0em) {
+  body.dark-mode {
+    #hero {
+      .cs-background {
+        &:before {
+          opacity: 0.8;
+        }
+      }
+      .cs-container .cs-title, .cs-subtitle, .cs-text {
+        color: white;
+      }
+    }
+    .cs-subtitle {
+      color: #d9e5f7;
+    }
+    .cs-text {
+      color: #d9e5f7;
+    }
+  }
+}
+
+
+
+  </style>
