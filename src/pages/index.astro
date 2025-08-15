@@ -12,6 +12,7 @@ import {getOptimizedImage} from "../js/utils"
 import {getHeroImages } from "../js/utils";
 
 import landingImage from "../assets/images/dry-ice-banner.webp" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage2 from "../assets/images/dry-ice-blasting-outside.webp" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 import iceBlastingBMW from "../assets/images/ice-blasting-bmw.jpg"
 import iceBlastingBMWClose from "../assets/images/ice-blasting-bmw-close.jpg"
 import iceBlastingGraffiti from "../assets/images/ice-blasting-graffiti.jpg"
@@ -19,10 +20,11 @@ import iceBlastingManufacturing from "../assets/images/ice-blasting-manufacturin
 
 const optimizedImage = await getOptimizedImage(landingImage)
 const heroImageOptimised = await getHeroImages(landingImage)
+const heroImageOptimised2 = await getHeroImages(landingImage2)
 
 import iceBlastingTruck from "../assets/images/ice-blasting-truck.jpg"
 
-import HeroOriginal from "../components/HeroOriginal.astro";
+import HeroWithServices from "../components/HeroWithServices.astro";
 import FAQ from "../components/FAQ.astro";
 import Mechanisms from "../components/Mechanisms.astro";
 ---
@@ -32,63 +34,8 @@ import Mechanisms from "../components/Mechanisms.astro";
   description="Dry Ice Blasting Services In The North West"
   preloadedImage = {optimizedImage}
 >
-  <HeroOriginal heroImageOptimised={heroImageOptimised} />
+  <HeroWithServices heroImageOptimised={heroImageOptimised2} />
 
-  <!-- ============================================ -->
-  <!--                  Services                    -->
-  <!-- ============================================ -->
-
-  <section id="services" class="services">
-    <!-- Get Icons From flaticon.com -->
-    <div class="card">
-      <picture>
-        <img
-          aria-hidden="true"
-          decoding="async"
-          src="/assets/svgs/service1.svg"
-          alt="appliance"
-          width="48"
-          height="48"
-        />
-      </picture>
-      <h2>Surface Cleaning</h2>
-      <p>
-        Remove dirt, paint, and contaminants from a variety of surfaces using eco-friendly dry ice blasting. Ideal for stone, brick, wood, and metal.
-      </p>
-    </div>
-    <div class="card">
-      <picture>
-        <img
-          aria-hidden="true"
-          decoding="async"
-          src="/assets/svgs/service2.svg"
-          alt="appliance"
-          width="48"
-          height="48"
-        />
-      </picture>
-      <h2>Graffiti Removal</h2>
-      <p>
-        Efficiently remove graffiti from walls, fences, and public spaces without damaging the underlying surface. Fast, safe, and effective.
-      </p>
-    </div>
-    <div class="card">
-      <picture>
-        <img
-          aria-hidden="true"
-          decoding="async"
-          src="/assets/svgs/service3.svg"
-          alt="appliance"
-          width="48"
-          height="48"
-        />
-      </picture>
-      <h2>Restoration</h2>
-      <p>
-        Restore the original look of buildings, monuments, and equipment. Cryoblasting is perfect for delicate restoration projects where traditional methods are too harsh.
-      </p>
-    </div>
-  </section>
 
   <!-- ============================================ -->
   <!--                 Side By Side                 -->
@@ -151,13 +98,13 @@ import Mechanisms from "../components/Mechanisms.astro";
         </picture> -->
       </div>
       <!-- Right Content Section-->
-      <div class="cs-right">
-        <span class="cs-topper">About</span>
-        <h2 class="cs-title">Your Trusted Partner in Dry Ice Blasting</h2>
-        <p class="cs-text">
+      <div class="cs-right animate-slide-left">
+        <span class="cs-topper animate-fade-in">About</span>
+        <h2 class="cs-title animate-fade-in">Your Trusted Partner in Dry Ice Blasting</h2>
+        <p class="cs-text animate-fade-in">
           At Cryoblast UK, quality is our promise and our standard. We understand that your equipment and resources are valuable, and you deserve a cleaning solution that's as safe as it is effective. That's why we use advanced dry ice blasting technology to deliver spotless results without damaging your surfaces.
         </p>
-          <a href="/contact" class="cs-button-solid">Contact Us</a>
+          <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up">📞 Call Us</a>
         </div>
       </div>
     </div>
@@ -224,14 +171,16 @@ import Mechanisms from "../components/Mechanisms.astro";
         </picture> -->
       </div>
       <!-- Right Content Section-->
-      <div class="cs-right">
-        <span class="cs-topper">Surface, Industrial & Commercial Cleaning</span>
-        <h2 class="cs-title">Nationwide Dry Ice Blasting</h2>
-        <p class="cs-text">
+      <div class="cs-right animate-slide-right">
+        <span class="cs-topper animate-fade-in">Surface, Industrial & Commercial Cleaning</span>
+        <h2 class="cs-title animate-fade-in">Nationwide Dry Ice Blasting</h2>
+        <p class="cs-text animate-fade-in">
           From specialist one-off cleans to regular contracts our professional technicians are on standby ready to guarantee a high specification clean.
         </p>
-        <p class="cs-text">
+        <p class="cs-text animate-fade-in">
           Our chemical-free clean is suitable for both commercial and industrial sectors. 
+        </p>
+        <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up">📞 Call Us</a>
       </div>
     </div>
   </section>
@@ -309,20 +258,125 @@ import Mechanisms from "../components/Mechanisms.astro";
         </picture> -->
       </div>
       <!-- Right Content Section-->
-      <div class="cs-right">
-        <span class="cs-topper">Knowledge Base</span>
-        <h2 class="cs-title">What Is Dry Ice Blasting?</h2>
-        <p class="cs-text">
+      <div class="cs-right animate-slide-left">
+        <span class="cs-topper animate-fade-in">Knowledge Base</span>
+        <h2 class="cs-title animate-fade-in">What Is Dry Ice Blasting?</h2>
+        <p class="cs-text animate-fade-in">
           Dry ice blasting is an advanced cleaning method that uses frozen carbon dioxide pellets to remove contaminants from surfaces without removing any material from the underlying equipment, surface or component.
         </p>
-        <p class="cs-text">Why It's Different
+        <p class="cs-text animate-fade-in">Why It's Different
           Unlike sandblasting or chemical cleaning, dry ice blasting leaves no residue behind. The pellets simply vanish into harmless CO2 gas, leaving you with a clean surface and nothing else to dispose of.</p>
+          <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up">📞 Call Us</a>
         </div>
       </div>
     </div>
   </section>
 
   <Mechanisms />
+
+  <!-- ============================================ -->
+  <!--                  Services                    -->
+  <!-- ============================================ -->
+
+  <section id="services" class="services">
+    <!-- Get Icons From flaticon.com -->
+    <div class="card animate-scale-up">
+      <picture>
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/svgs/service1.svg"
+          alt="appliance"
+          width="48"
+          height="48"
+        />
+      </picture>
+      <h2>Surface Cleaning</h2>
+      <p>
+        Remove dirt and contaminants from a variety of surfaces using eco-friendly dry ice.
+      </p>
+    </div>
+    <div class="card animate-scale-up">
+      <picture>
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/svgs/service2.svg"
+          alt="appliance"
+          width="48"
+          height="48"
+        />
+      </picture>
+      <h2>Graffiti Removal</h2>
+      <p>
+        Efficiently remove graffiti from walls, fences, and public spaces without damaging the underlying surface.
+      </p>
+    </div>
+    <div class="card animate-scale-up">
+      <picture>
+        <img
+          aria-hidden="true"
+          decoding="async"
+          src="/assets/svgs/service3.svg"
+          alt="appliance"
+          width="48"
+          height="48"
+        />
+      </picture>
+      <h2>Restoration</h2>
+      <p>
+        Restore the original look of buildings, monuments, and equipment.
+      </p>
+    </div>
+    <div class="card animate-scale-up">
+        <picture>
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/svgs/service2.svg"
+            alt="appliance"
+            width="48"
+            height="48"
+          />
+        </picture>
+        <h2>Priting Machines</h2>
+        <p>
+          Priting machinery and equipment cleaning.
+        </p>
+      </div>
+      <div class="card animate-scale-up">
+        <picture>
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/svgs/service2.svg"
+            alt="appliance"
+            width="48"
+            height="48"
+          />
+        </picture>
+        <h2>Moulding</h2>
+        <p>
+          Moulding and plastic equipment cleaning.
+        </p>
+      </div>
+      <div class="card animate-scale-up">
+        <picture>
+          <img
+            aria-hidden="true"
+            decoding="async"
+            src="/assets/svgs/service2.svg"
+            alt="appliance"
+            width="48"
+            height="48"
+          />
+        </picture>
+        <h2>Paint Removal</h2>
+        <p>
+          Industrial, automotive and general paint removal.
+        </p>
+      </div>
+  </section>
 
   <!-- ============================================ -->
   <!--                   Gallery                    -->
@@ -358,7 +412,7 @@ import Mechanisms from "../components/Mechanisms.astro";
       width: 90%;
       max-width: (1320/16em);
       margin: auto;
-      margin-top: (-167/16em);
+    //   margin-top: (-167/16em);
       margin-bottom: (50/16em);
       padding: (50/16em) (20/16em);
       background: #fff;
@@ -1188,5 +1242,171 @@ import Mechanisms from "../components/Mechanisms.astro";
     }
   }
 </style>
+
+<script is:inline>
+  // Text Animation Script for Astro
+  class TextAnimator {
+    constructor(options = {}) {
+      this.options = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px',
+        animationDelay: 100,
+        animationDuration: 600,
+        ...options
+      };
+      
+      this.observer = null;
+      this.init();
+    }
+  
+    init() {
+      // Create intersection observer
+      this.observer = new IntersectionObserver(
+        this.handleIntersection.bind(this),
+        {
+          threshold: this.options.threshold,
+          rootMargin: this.options.rootMargin
+        }
+      );
+  
+      // Wait for DOM to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => this.setupElements());
+      } else {
+        this.setupElements();
+      }
+    }
+  
+    setupElements() {
+      // Find all elements with animation classes
+      const animatedElements = document.querySelectorAll([
+        '.animate-fade-in',
+        '.animate-slide-up',
+        '.animate-slide-down',
+        '.animate-slide-left',
+        '.animate-slide-right',
+        '.animate-scale-up',
+        '.animate-typewriter',
+        '.animate-word-reveal'
+      ].join(', '));
+  
+      animatedElements.forEach(element => {
+        // Add initial styles
+        this.prepareElement(element);
+        // Start observing
+        this.observer.observe(element);
+      });
+    }
+  
+    prepareElement(element) {
+      const animationType = this.getAnimationType(element);
+      
+      // Set initial state based on animation type
+      switch (animationType) {
+        case 'fade-in':
+          element.style.opacity = '0';
+          element.style.transition = `opacity ${this.options.animationDuration}ms ease-out`;
+          break;
+          
+        case 'slide-up':
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(30px)';
+          element.style.transition = `opacity ${this.options.animationDuration}ms ease-out, transform ${this.options.animationDuration}ms ease-out`;
+          break;
+          
+        case 'slide-down':
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(-30px)';
+          element.style.transition = `opacity ${this.options.animationDuration}ms ease-out, transform ${this.options.animationDuration}ms ease-out`;
+          break;
+          
+        case 'slide-left':
+          element.style.opacity = '0';
+          element.style.transform = 'translateX(30px)';
+          element.style.transition = `opacity ${this.options.animationDuration}ms ease-out, transform ${this.options.animationDuration}ms ease-out`;
+          break;
+          
+        case 'slide-right':
+          element.style.opacity = '0';
+          element.style.transform = 'translateX(-30px)';
+          element.style.transition = `opacity ${this.options.animationDuration}ms ease-out, transform ${this.options.animationDuration}ms ease-out`;
+          break;
+          
+        case 'scale-up':
+          element.style.opacity = '0';
+          element.style.transform = 'scale(0.8)';
+          element.style.transition = `opacity ${this.options.animationDuration}ms ease-out, transform ${this.options.animationDuration}ms ease-out`;
+          break;
+      }
+    }
+  
+    getAnimationType(element) {
+      const classList = Array.from(element.classList);
+      for (const className of classList) {
+        if (className.startsWith('animate-')) {
+          return className.replace('animate-', '');
+        }
+      }
+      return 'fade-in'; // default
+    }
+  
+    handleIntersection(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          this.animateElement(entry.target);
+          this.observer.unobserve(entry.target); // Only animate once
+        }
+      });
+    }
+  
+    animateElement(element) {
+      const animationType = this.getAnimationType(element);
+  
+      switch (animationType) {
+        case 'fade-in':
+          element.style.opacity = '1';
+          break;
+          
+        case 'slide-up':
+        case 'slide-down':
+        case 'slide-left':
+        case 'slide-right':
+        case 'scale-up':
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0) translateX(0) scale(1)';
+          break;
+      }
+    }
+  }
+  
+  // Initialize the animator when the script loads
+  let textAnimator;
+  
+  // For Astro, we need to reinitialize on navigation
+  document.addEventListener('astro:page-load', () => {
+    textAnimator = new TextAnimator({
+      threshold: 0.1,
+      animationDelay: 150,
+      animationDuration: 800
+    });
+  });
+  
+  // Fallback for non-Astro sites or initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      textAnimator = new TextAnimator({
+        threshold: 0.1,
+        animationDelay: 150,
+        animationDuration: 800
+      });
+    });
+  } else {
+    textAnimator = new TextAnimator({
+      threshold: 0.1,
+      animationDelay: 150,
+      animationDuration: 800
+    });
+  }
+</script>
 
 

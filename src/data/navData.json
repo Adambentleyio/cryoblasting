@@ -2,6 +2,10 @@
   {
     "key": "Home",
     "url": "/"
+  },
+  {
+    "key": "Contact",
+    "url": "/contact"
   }
   
 ]
