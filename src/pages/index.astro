@@ -17,6 +17,10 @@ import iceBlastingBMW from "../assets/images/ice-blasting-bmw.jpg"
 import iceBlastingBMWClose from "../assets/images/ice-blasting-bmw-close.jpg"
 import iceBlastingGraffiti from "../assets/images/ice-blasting-graffiti.jpg"
 import iceBlastingManufacturing from "../assets/images/ice-blasting-manufacturing.jpg"
+import iceBlastingMachine from "../assets/images/dry-ice-blasting-machine.png"
+import engineBeforeAfter from "../assets/images/engine-before-after.jpg"
+import infographic from "../assets/images/dry-ice-infographic.jpg"
+
 
 const optimizedImage = await getOptimizedImage(landingImage)
 const heroImageOptimised = await getHeroImages(landingImage)
@@ -27,6 +31,7 @@ import iceBlastingTruck from "../assets/images/ice-blasting-truck.jpg"
 import HeroWithServices from "../components/HeroWithServices.astro";
 import FAQ from "../components/FAQ.astro";
 import Mechanisms from "../components/Mechanisms.astro";
+import HeroOriginal from "../components/HeroOriginal.astro";
 ---
 
 <BaseLayout
@@ -74,7 +79,7 @@ import Mechanisms from "../components/Mechanisms.astro";
         <Picture
           formats={["avif", "webp"]} 
           class="cs-picture cs-picture2"
-          src={iceBlastingBMWClose}
+          src={engineBeforeAfter}
           alt="cryoTemp2"          
           />
         <!-- <picture class="cs-picture cs-picture2">
@@ -102,7 +107,7 @@ import Mechanisms from "../components/Mechanisms.astro";
         <span class="cs-topper animate-fade-in">About</span>
         <h2 class="cs-title animate-fade-in">Your Trusted Partner in Dry Ice Blasting</h2>
         <p class="cs-text animate-fade-in">
-          At Cryoblast UK, quality is our promise and our standard. We understand that your equipment and resources are valuable, and you deserve a cleaning solution that's as safe as it is effective. That's why we use advanced dry ice blasting technology to deliver spotless results without damaging your surfaces.
+          At Cryo Blasting UK, quality is our promise and our standard. We understand that your equipment and resources are valuable, and you deserve a cleaning solution that's as safe as it is effective. That's why we use advanced dry ice blasting technology to deliver spotless results without damaging your surfaces.
         </p>
           <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up">📞 Call Us</a>
         </div>
@@ -199,12 +204,12 @@ import Mechanisms from "../components/Mechanisms.astro";
           alt="cryoTemp1">
           <source
         media="(max-width: 600px)"
-        srcset={optimizedImage.src}>
-        <source media="(min-width: 601px)" srcset={optimizedImage.src} />
+        srcset={iceBlastingMachine.src}>
+        <source media="(min-width: 601px)" srcset={iceBlastingMachine.src} />
         <img
           aria-hidden="true"
           decoding="async"
-          src={optimizedImage.src}
+          src={iceBlastingMachine.src}
           alt="new home"
           width="2500"
           height="1667"
@@ -272,7 +277,9 @@ import Mechanisms from "../components/Mechanisms.astro";
     </div>
   </section>
 
-  <Mechanisms />
+  <div class="bg-muted"> <!-- bACKGROUND MUTED DIV -->
+    <Mechanisms />
+
 
   <!-- ============================================ -->
   <!--                  Services                    -->
@@ -378,6 +385,8 @@ import Mechanisms from "../components/Mechanisms.astro";
       </div>
   </section>
 
+</div> <!-- End of background muted -->
+
   <!-- ============================================ -->
   <!--                   Gallery                    -->
   <!-- ============================================ -->
@@ -398,7 +407,8 @@ import Mechanisms from "../components/Mechanisms.astro";
 <style lang="less">
   /* STYLES FOR ABOVE THE FOLD */
 
- 
+  /* General */
+
 
 
 
