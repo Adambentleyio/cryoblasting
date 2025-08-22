@@ -47,7 +47,7 @@ import HeroOriginal from "../components/HeroOriginal.astro";
   <!-- ============================================ -->
 
   <section id="sbs">
-    <div class="cs-container">
+    <div class="cs-container" id="intro">
       <!-- Left Image Section -->
       <div class="cs-left">
           <Picture
@@ -73,7 +73,7 @@ import HeroOriginal from "../components/HeroOriginal.astro";
             alt="cabinets"
             loading="lazy"
             width="400"
-            height="563"
+          height="563"
           />
         </picture> -->
         <Picture
@@ -277,7 +277,7 @@ import HeroOriginal from "../components/HeroOriginal.astro";
     </div>
   </section>
 
-  <div class="bg-muted"> <!-- bACKGROUND MUTED DIV -->
+<div class="bg-muted"> <!-- bACKGROUND MUTED DIV -->
     <Mechanisms />
 
 
@@ -286,6 +286,7 @@ import HeroOriginal from "../components/HeroOriginal.astro";
   <!-- ============================================ -->
 
   <section id="services" class="services">
+    <!-- <h2>Areas we service</h2> -->
     <!-- Get Icons From flaticon.com -->
     <div class="card animate-scale-up">
       <picture>
@@ -346,7 +347,7 @@ import HeroOriginal from "../components/HeroOriginal.astro";
             height="48"
           />
         </picture>
-        <h2>Priting Machines</h2>
+        <h2>Printing Machines</h2>
         <p>
           Priting machinery and equipment cleaning.
         </p>
@@ -385,15 +386,15 @@ import HeroOriginal from "../components/HeroOriginal.astro";
       </div>
   </section>
 
-</div> <!-- End of background muted -->
-
+  
   <!-- ============================================ -->
   <!--                   Gallery                    -->
   <!-- ============================================ -->
-
+  
   <!-- <Gallery /> -->
-
+  
   <FAQ  />
+</div> <!-- End of background muted -->
 
   <!-- ============================================ -->
   <!--                   Reviews                    -->
@@ -408,7 +409,9 @@ import HeroOriginal from "../components/HeroOriginal.astro";
   /* STYLES FOR ABOVE THE FOLD */
 
   /* General */
-
+  .bg-muted {
+    background: var(--background-light)
+  }
 
 
 

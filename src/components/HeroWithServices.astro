@@ -12,7 +12,7 @@ const { heroImageOptimised } = Astro.props;
             <h2 class="cs-title">THE CRYOBLASTING SPECIALISTS</h2>
             <div class="cs-flex">
                 <p class="cs-text">Welcome to Cryo Blasting UK. We are experts in non-abravise cleaning, removal and restoration using dry ice blasting technology. Visit our premises for automotive cleaning or inquire about us to visit you. </p>
-                <!-- <a href="" class="cs-button-solid">Read More</a> -->
+                <a href="#intro" class="cs-button-solid">Read More</a>
             </div>
         </div>
         <picture class="cs-picture">
@@ -95,10 +95,8 @@ const { heroImageOptimised } = Astro.props;
   #hero-1946 {
     padding: var(--sectionPadding);
     /* 160px - 200px */
-    padding-top: clamp(10rem, 20vw, 12.5rem);
     overflow: hidden;
     position: relative;
-    opacity: 0;
     z-index: 1;
   }
   #hero-1946 .cs-container {
@@ -134,13 +132,13 @@ const { heroImageOptimised } = Astro.props;
   }
   #hero-1946 .cs-text {
     margin-bottom: 1.25rem;
+    padding-top: 0.5rem;
   }
   #hero-1946 .cs-button-solid {
     font-size: 1rem;
     font-weight: 700;
     /* 46px - 56px */
     line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    text-align: center;
     text-decoration: none;
     min-width: 9.375rem;
     margin: 0;
@@ -150,15 +148,18 @@ const { heroImageOptimised } = Astro.props;
     padding: 0 clamp(2rem, 4vw, 3rem);
     background-color: var(--primary);
     color: var(--bodyTextColorWhite);
-    display: inline-block;
+    display: flex;
+    max-width: max-content;
+    align-items: center;
     position: relative;
     z-index: 1;
     transition: color 0.3s;
     transition: background-color 0.3s;
   }
   #hero-1946 .cs-button-solid:hover {
-    background-color: #000;
+    background-color: var(--dark);
     color: #fff;
+    border-radius: inherit;
   }
   #hero-1946 .cs-picture {
     width: 100%;
@@ -211,7 +212,7 @@ const { heroImageOptimised } = Astro.props;
     color: var(--primary);
   }
   #hero-1946 .cs-item:hover .cs-icon {
-    transform: rotateY(360deg);
+    transform: rotateY(360deg) translateY(0);
   }
   #hero-1946 .cs-icon-picture {
     margin-bottom: 1.25rem;
@@ -290,7 +291,7 @@ const { heroImageOptimised } = Astro.props;
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #hero-1946 {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: var(--dark);
   }
   body.dark-mode #hero-1946 .cs-title,
   body.dark-mode #hero-1946 .cs-text,
@@ -309,30 +310,67 @@ const { heroImageOptimised } = Astro.props;
     filter: invert(1) brightness(1000%);
   }
 }
-                                
 
+ /* Initial animation states - prevents flash */
+ #hero-1946 .cs-title,
+  #hero-1946 .cs-text,
+  #hero-1946 .cs-button-solid,
+  #hero-1946 .cs-picture,
+  #hero-1946 .cs-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation-fill-mode: forwards;
+  }
 
+  /* Animation keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Apply animations with staggered delays */
+  #hero-1946 .cs-title {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+  }
+
+  #hero-1946 .cs-text {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+  }
+
+  #hero-1946 .cs-button-solid {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
+  }
+
+  #hero-1946 .cs-picture {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+  }
+
+  /* Service cards with staggered timing */
+  #hero-1946 .cs-item:nth-child(1) {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+  }
+
+  #hero-1946 .cs-item:nth-child(2) {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1.0s forwards;
+  }
+
+  #hero-1946 .cs-item:nth-child(3) {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1.2s forwards;
+  }
+
+  #hero-1946 .cs-item:nth-child(4) {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1.4s forwards;
+  }
 
 </style>
 
-<script is:inline>
-  // Wait for the DOM to be fully loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get the hero section element
-    const heroSection = document.querySelector('#hero-1946');
-    
-    if (heroSection) {
-      // Set initial state - invisible and slightly moved down
-      heroSection.style.opacity = '0';
-      heroSection.style.transform = 'translateY(30px)';
-      heroSection.style.transition = 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
-      
-      // Trigger animation after a small delay
-      setTimeout(() => {
-        heroSection.style.opacity = '1';
-        heroSection.style.transform = 'translateY(0)';
-      }, 300);
-    }
-  });
-</script>
+
+
+
                                 

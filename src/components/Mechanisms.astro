@@ -24,7 +24,7 @@ import infographic from "../assets/images/dry-ice-infographic.jpg"
                     <picture class="cs-picture">
                         <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
                     </picture>
-                    <h3 class="cs-h3">Kinetic Energy</h3>
+                    <h3 class="cs-h3">KINETIC ENERGY</h3>
                     <p class="cs-item-text">
                         Dry ice pellets are gentler than traditional blast media like sand or glass beads. When launched at high speed, they hit surfaces with just enough force to dislodge dirt and grime without damaging what's underneath.
                     </p>
@@ -35,7 +35,7 @@ import infographic from "../assets/images/dry-ice-infographic.jpg"
                     <picture class="cs-picture">
                         <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
                     </picture>
-                    <h3 class="cs-h3">Temperature Shock</h3>
+                    <h3 class="cs-h3">TEMPERATURE SHOCK</h3>
                     <p class="cs-item-text">
                         The pellets are extremely cold (-78°C). When they hit warm contaminants, they instantly freeze the surface layer. This sudden temperature change causes the dirt to crack and lose its grip on the surface below.
                     </p>
@@ -46,7 +46,7 @@ import infographic from "../assets/images/dry-ice-infographic.jpg"
                     <picture class="cs-picture">
                         <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fsquares.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
                     </picture>
-                    <h3 class="cs-h3">Gas Expansion</h3>
+                    <h3 class="cs-h3">GAS EXPANSION</h3>
                     <p class="cs-item-text">
                         Here's where the magic happens. Upon contact, dry ice pellets instantly turn from solid to gas—expanding to nearly 800 times their original size. This rapid expansion creates a lifting force that pushes loosened contaminants away from the surface.
                     </p>
@@ -122,7 +122,10 @@ import infographic from "../assets/images/dry-ice-infographic.jpg"
             &:hover {
                 background-color: #fff;
                 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 50px;
-                transform: translateY(-0.4375rem);
+                // border: 5px solid var(--primary);
+                transition: all 0.5s;
+                transform: translateY(-0.4375rem) scale(1.1);
+                z-index: 1000;
 
                 .cs-picture {
                     &:before {
@@ -175,7 +178,7 @@ import infographic from "../assets/images/dry-ice-infographic.jpg"
 
         .cs-item-text {
             /* 14px - 16px */
-            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            font-size: var(--bodyFontSize);
             text-align: center;
             line-height: 1.5em;
             margin: 0;

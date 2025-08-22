@@ -99,8 +99,8 @@ a:has(.text-logo) {
       box-sizing: border-box;
       padding: (12/16rem) (16/16rem);
       background-color: #fff;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-      position: fixed;
+      // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      // position: fixed;
       z-index: 10000;
 
       &:before {
@@ -108,7 +108,7 @@ a:has(.text-logo) {
         content: "";
         width: 0%;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.6);
+        background: var(--dark);
         opacity: 0;
         display: block;
         position: absolute;
@@ -373,6 +373,7 @@ a:has(.text-logo) {
     body.dark-mode {
       #cs-navigation {
         background-color: var(--dark);
+        
 
         .text-logo {
           color: var(--bodyTextColorWhite)
@@ -401,16 +402,18 @@ a:has(.text-logo) {
   @media only screen and (min-width: 64rem) {
     #cs-navigation {
       /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
-      font-family: "Roboto", "Arial", sans-serif;
+      // font-family: "Roboto", "Arial", sans-serif;
       width: 100%;
+      margin: 0 auto;
       /* prevents padding from affecting height and width */
       box-sizing: border-box;
       padding: 0 (16/16rem);
-      background-color: #fff;
-      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-      position: fixed;
+      // background-color: #fff;
+      // background-color: var(--primary);
+      // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      // position: fixed;
       z-index: 10000;
-
+      
       .cs-container {
         width: 100%;
         max-width: (1280/16rem);
@@ -419,6 +422,7 @@ a:has(.text-logo) {
         justify-content: flex-end;
         align-items: center;
         gap: (24/16rem);
+        border-bottom: 5px solid var(--primary);
       }
 
       .cs-toggle {
