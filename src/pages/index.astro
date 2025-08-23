@@ -22,17 +22,17 @@ import engineBeforeAfter from "../assets/images/engine-before-after.jpg"
 import infographic from "../assets/images/dry-ice-infographic.jpg"
 import engineBlasting from "../assets/images/engine-blasting.jpg"
 
-
-const optimizedImage = await getOptimizedImage(landingImage)
-const heroImageOptimised = await getHeroImages(landingImage)
-const heroImageOptimised2 = await getHeroImages(engineBlasting)
-
 import iceBlastingTruck from "../assets/images/ice-blasting-truck.jpg"
 
 import HeroWithServices from "../components/HeroWithServices.astro";
 import FAQ from "../components/FAQ.astro";
 import Mechanisms from "../components/Mechanisms.astro";
 import HeroOriginal from "../components/HeroOriginal.astro";
+
+
+const optimizedImage = await getOptimizedImage(landingImage)
+const heroImageOptimised = await getHeroImages(landingImage)
+const heroImageOptimised2 = await getHeroImages(engineBlasting)
 ---
 
 <BaseLayout
