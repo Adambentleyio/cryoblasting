@@ -1,0 +1,172 @@
+---
+
+interface Props {
+    images: any[]
+}
+
+const {images} = Astro.props
+
+---
+
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-1152">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">A Superior Clean</span>
+            <h2 class="cs-title">Social Posts</h2>
+        </div>
+        <div class="cs-gallery">
+            <!--Picture 1-->
+            {images.slice(0,5).map((image, index) => (
+                <picture class="cs-image">
+                    <source media="(max-width: 600px)" srcset={image.src || image.default?.src || image} />
+                    <source media="(min-width: 601px)" srcset={image.src || image.default?.src || image} />
+                    <img loading="lazy" decoding="async" src={image.src || image.default?.src || image} alt={`Gallery image ${index + 1}`} width="272" height="320" />
+                </picture>
+            ))}
+        </div>
+    </div>
+</section>
+                         
+<style lang="less">
+
+    /*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #gallery-1152 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at large desktop */
+            max-width: (944/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-topper {
+            color: #767676;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-gallery {
+            width: 100%;
+            /* changes to 100% at tablet */
+            max-width: (500/16rem);
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 1fr;
+            /* 16px - 20px */
+            gap: clamp(1rem, 1.5vw, 1.25rem);
+        }
+
+        .cs-image {
+            /* 260px - 360px */
+            // aspect-ratio: 4/5;
+            min-height: clamp(16.25rem, 60vw, 20rem);
+            border-radius: (16/16rem);
+            /* clips the image corners */
+            overflow: hidden;
+            display: block;
+            grid-column: span 12;
+            grid-row: span 1;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes it act like a background image */
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/* Tablet - 700px */
+@media only screen and (min-width: 43.75rem) {
+    #gallery-1152 {
+        .cs-gallery {
+            max-width: 100%;
+            grid-template-rows: 1fr;
+
+        }
+
+        .cs-image {
+            grid-column: span 4;
+
+            &:nth-of-type(4) {
+                grid-column: 3/7;
+            }
+            &:nth-of-type(5) {
+                grid-column: 7/11
+            }
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #gallery-1152 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-gallery {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .cs-image {
+            grid-column: span 1;
+
+            &:nth-of-type(4),
+            &:nth-of-type(5) {
+                grid-column: span 1;
+            }
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #gallery-1152 {
+            .cs-topper {
+                color: var(--secondary);
+            }
+            .cs-title {
+                color: var(--bodyTextColorWhite);
+            }
+        }
+    }
+}
+
+                                
+</style>

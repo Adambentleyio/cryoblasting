@@ -28,7 +28,16 @@ import HeroWithServices from "../components/HeroWithServices.astro";
 import FAQ from "../components/FAQ.astro";
 import Mechanisms from "../components/Mechanisms.astro";
 import HeroOriginal from "../components/HeroOriginal.astro";
+import ServiceCards from "../components/ServiceCards.astro";
 
+// Social Cards for ServiceCards Components
+
+const socialCardImages = import.meta.glob('../assets/images/social-cards/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  import: 'default'
+}); 
+// Convert to array and get the image objects
+const socialCards = Object.values(socialCardImages);
 
 const optimizedImage = await getOptimizedImage(landingImage)
 const heroImageOptimised = await getHeroImages(landingImage)
@@ -42,6 +51,11 @@ const heroImageOptimised2 = await getHeroImages(engineBlasting)
 >
   <HeroWithServices heroImageOptimised={heroImageOptimised2} />
 
+   <!-- ============================================ -->
+  <!--                 Service Cards                 -->
+  <!-- ============================================ -->
+
+  <ServiceCards images={socialCards}  />
 
   <!-- ============================================ -->
   <!--                 Side By Side                 -->
