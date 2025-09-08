@@ -15,7 +15,7 @@ import { Icon } from 'astro-icon/components'
         +44 7354 339 337
       </a>
       <a class="cs-li-link-sm" href="mailto:cryoblastuk@gmail.com">
-        <Icon name="email" />
+        <Icon name="mail" />
         cryoblastuk@gmail.com
       </a>
     </ul>
@@ -57,7 +57,7 @@ import { Icon } from 'astro-icon/components'
             +44 7354 339 337
           </a>
           <a class="cs-li-link" href="mailto:cryoblastuk@gmail.com">
-            <Icon name="email" />
+            <Icon name="mail" />
             cryoblastuk@gmail.com
           </a>
           {
@@ -128,6 +128,9 @@ a:has(.text-logo) {
         .cs-li-link-sm {
           font-size: 12px;
           text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
         }
       }
 

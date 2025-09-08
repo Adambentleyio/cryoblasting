@@ -29,6 +29,8 @@ import FAQ from "../components/FAQ.astro";
 import Mechanisms from "../components/Mechanisms.astro";
 import HeroOriginal from "../components/HeroOriginal.astro";
 import ServiceCards from "../components/ServiceCards.astro";
+import { Icon } from 'astro-icon/components'
+
 
 // Social Cards for ServiceCards Components
 
@@ -124,7 +126,7 @@ const heroImageOptimised2 = await getHeroImages(engineBlasting)
         <p class="cs-text animate-fade-in">
           At Cryo Blasting UK, quality is our promise and our standard. We understand that your equipment and resources are valuable, and you deserve a cleaning solution that's as safe as it is effective. That's why we use advanced dry ice blasting technology to deliver spotless results without damaging your surfaces.
         </p>
-          <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up">📞 Call Us</a>
+          <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up"><Icon name="phone" /> Call Us</a>
         </div>
       </div>
     </div>
@@ -200,7 +202,7 @@ const heroImageOptimised2 = await getHeroImages(engineBlasting)
         <p class="cs-text animate-fade-in">
           Our chemical-free clean is suitable for both commercial and industrial sectors. 
         </p>
-        <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up">📞 Call Us</a>
+        <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up"><Icon name="phone" /> Call Us</a>
       </div>
     </div>
   </section>
@@ -286,7 +288,7 @@ const heroImageOptimised2 = await getHeroImages(engineBlasting)
         </p>
         <p class="cs-text animate-fade-in">Why It's Different
           Unlike sandblasting or chemical cleaning, dry ice blasting leaves no residue behind. The pellets simply vanish into harmless CO2 gas, leaving you with a clean surface and nothing else to dispose of.</p>
-          <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up">📞 Call Us</a>
+          <a href="tel:(+44)7354339337" class="cs-button-solid animate-scale-up"><Icon name="phone" /> Call Us</a>
         </div>
       </div>
     </div>
@@ -694,12 +696,16 @@ const heroImageOptimised2 = await getHeroImages(engineBlasting)
         bottom: (0/16rem);
       }
 
-      .cs-button-solid {
-        margin-top: (32/16rem);
-      }
     }
   }
-
+  
+  .cs-button-solid {
+    margin-top: (32/16rem);
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.25rem      
+  }
   /* Desktop - 1024px */
   @media only screen and (min-width: 64em) {
     #sbs {
