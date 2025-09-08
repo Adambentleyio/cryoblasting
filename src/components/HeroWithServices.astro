@@ -246,6 +246,8 @@ const { heroImageOptimised } = Astro.props;
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
+
+  
   #hero-1946 .cs-text {
     font-size: 1.25rem;
   }
@@ -257,11 +259,12 @@ const { heroImageOptimised } = Astro.props;
   }
 
   #hero-1946 .cs-button-solid {
-    margin: 0;
+    margin: 0 auto;
   }
 }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
+
   #hero-1946 .cs-content {
     display: flex;
     flex-direction: column;
@@ -271,6 +274,10 @@ const { heroImageOptimised } = Astro.props;
   }
   #hero-1946 .cs-item {
     grid-column: span 3;
+  }
+
+  #hero-1946 .cs-button-solid {
+    margin: 0;
   }
 }
 /* Large Desktop 1300px */
@@ -291,6 +298,7 @@ const { heroImageOptimised } = Astro.props;
   #hero-1946 .cs-flex {
     width: 50%;
     max-width: 39.375rem;
+    align-items: start;
   }
 }
 /* Dark Mode */
